@@ -18,4 +18,6 @@ COPY dist /usr/src/app/dist
 
 EXPOSE 8000
 
+USER node
+
 CMD ["npm", "run", "start:back"]
