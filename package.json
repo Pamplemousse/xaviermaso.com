@@ -4,7 +4,7 @@
   "version": "2.3.0",
   "private": true,
   "scripts": {
-    "build": "export NODE_ENV=production; rimraf dist && webpack",
+    "build": "export NODE_ENV=production; rimraf dist && rimraf elm-stuff && webpack",
     "check": "npm run check:js && npm run check:elm",
     "check:elm": "elm-format --validate front/elm/",
     "check:js": "standard",
