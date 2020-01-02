@@ -1,13 +1,14 @@
 module View exposing (view)
 
 import Browser exposing (Document)
+import CatGifs.View exposing (..)
 import Html exposing (Html, a, br, button, div, h6, i, object, text)
 import Html.Attributes exposing (..)
 import Html.Events exposing (onClick)
 import Messages exposing (..)
 import Models exposing (Model)
 import Projects.View exposing (..)
-import Routing exposing (blogPath, cvPath, facebookPath, projectsPath, rootPath)
+import Routing exposing (blogPath, cvPath, facebookPath, meowPath, projectsPath, rootPath)
 import SocialMedia.View exposing (view)
 
 
@@ -30,14 +31,19 @@ view model =
                     , body = [ layoutify cvView ]
                     }
 
-                Routing.ProjectsRoute ->
-                    { title = "XM | Projects"
-                    , body = [ layoutify (projectsView model) ]
-                    }
-
                 Routing.FacebookRoute ->
                     { title = "XM | Projects"
                     , body = [ layoutify facebookView ]
+                    }
+
+                Routing.MeowRoute ->
+                    { title = "XM | Meow"
+                    , body = [ layoutify (meowView model) ]
+                    }
+
+                Routing.ProjectsRoute ->
+                    { title = "XM | Projects"
+                    , body = [ layoutify (projectsView model) ]
                     }
 
         Nothing ->
@@ -57,6 +63,13 @@ projectsView : Model -> Html Msg
 projectsView model =
     div []
         [ Projects.View.view model
+        ]
+
+
+meowView : Model -> Html Msg
+meowView model =
+    div []
+        [ CatGifs.View.view model
         ]
 
 
@@ -157,7 +170,7 @@ footer =
     div [ class "row footer" ]
         [ div [ class "col-md-2 col-md-offset-10" ]
             [ div [ class "section" ]
-                [ h6 []
+                [ h6 [ onClick (NavigateTo meowPath) ]
                     [ text "Such reserved rights." ]
                 ]
             ]

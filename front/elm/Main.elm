@@ -2,9 +2,9 @@ module Main exposing (initialState, main, subscriptions)
 
 import Browser exposing (UrlRequest)
 import Browser.Navigation exposing (Key)
+import Commands exposing (fetchData)
 import Messages exposing (Msg(..))
 import Models exposing (Flags, Model, initialModel)
-import Projects.Commands exposing (fetchProjects)
 import Routing exposing (Route)
 import Update exposing (update)
 import Url exposing (Url)
@@ -14,7 +14,7 @@ import View exposing (view)
 
 initialState : Flags -> Url -> Browser.Navigation.Key -> ( Model, Cmd Msg )
 initialState flags url key =
-    ( initialModel key url, fetchProjects flags.projectsUrl )
+    ( initialModel key url flags.catGifsUrl, fetchData flags.projectsUrl flags.catGifsUrl )
 
 
 subscriptions : Model -> Sub Msg
