@@ -3,7 +3,7 @@
 require('./styles/main.scss')
 
 var devAPI = 'http://localhost:8000/api'
-var prodAPI = 'http://xaviermaso.com/api'
+var prodAPI = 'https://www.xaviermaso.com/api'
 var API = (process.env.NODE_ENV === 'production') ? prodAPI : devAPI
 
 var catGifsUrl = 'https://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag=cat'
