@@ -6,10 +6,10 @@
     "dates": "may 2018 - today",
     "tags": "web security, javascript, R&D",
     "links": [{
-      "target": "internship_report_2018.pdf",
-      "value": "See my internship report for a more in depth presentation"
+      "target": "https://blog.xaviermaso.com/2018/10/01/Scanning-modern-web-applications-with-OWASP-ZAP.html",
+      "value": "See the write-up on my blog for a more in-depth presentation."
     }],
-    "description": "Intern at Mozilla during the summer of 2018 in the <a href='https://wiki.mozilla.org/Security/FirefoxOperations' target='_blank'>FoxSec</a> team. I worked on improving <a href='https://www.owasp.org/index.php/OWASP_Zed_Attack_Proxy_Project'>OWASP ZAP</a>, for it to be able to scan \"modern\" web applications.<br/>The effort has been focused around two keys areas: write the <a href='https://github.com/zaproxy/zaproxy/issues/4939' target='_blank'>FrontEndScanner addon</a> (not yet released) for ZAP to allow users to run \"client-side scripts\"; and create a front-end library to help debug modern web pages: the <a href='https://www.npmjs.com/package/@zaproxy/front-end-tracker' target='_blank'>@zaproxy/front-end-tracker."
+    "description": "Intern at Mozilla during the summer of 2018 in the <a href='https://wiki.mozilla.org/Security/FirefoxOperations' target='_blank'>FoxSec</a> team. I worked on improving <a href='https://www.owasp.org/index.php/OWASP_Zed_Attack_Proxy_Project'>OWASP ZAP</a>, for it to be able to scan \"modern\" web applications.<br/>The effort has been focused around two keys areas: write the <a href='https://github.com/zaproxy/zaproxy/issues/4939' target='_blank'>FrontEndScanner addon</a> (not yet released) for ZAP to allow users to run \"client-side scripts\"; and create a front-end library to help debug modern web pages: the <a href='https://www.npmjs.com/package/@zaproxy/front-end-tracker' target='_blank'>@zaproxy/front-end-tracker</a>."
   }, {
     "id": "1",
     "tileContent": "redshield",

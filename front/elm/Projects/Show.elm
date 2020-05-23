@@ -3,6 +3,8 @@ module Projects.Show exposing (formatLink, view)
 import Html exposing (..)
 import Html.Attributes exposing (class, href, id, property, style, target)
 import Html.Events exposing (onClick)
+import Html.Parser exposing (run)
+import Html.Parser.Util exposing (toVirtualDom)
 import Json.Encode exposing (string)
 import Messages exposing (..)
 import Projects.Models exposing (Link, Project)
@@ -11,13 +13,18 @@ import Projects.Models exposing (Link, Project)
 view : Project -> Html Msg
 view project =
     let
-        descriptionValue =
+        descriptionNode =
             case project.description of
-                Nothing ->
-                    ""
-
                 Just description ->
-                    description
+                    case Html.Parser.run description of
+                        Ok parsedNodes ->
+                            Html.Parser.Util.toVirtualDom parsedNodes
+
+                        _ ->
+                            []
+
+                Nothing ->
+                    []
     in
     div [ class "row" ]
         [ div [ class "col-md-12" ]
@@ -32,10 +39,8 @@ view project =
                 , h4 [] [ text project.tags ]
                 , div [ class "row" ]
                     [ div
-                        [ class "col-md-12 textDesc"
-                        , property "innerHTML" <| string descriptionValue
-                        ]
-                        []
+                        [ class "col-md-12 textDesc" ]
+                        descriptionNode
                     ]
                 , div [] (List.map formatLink project.links)
                 , i
