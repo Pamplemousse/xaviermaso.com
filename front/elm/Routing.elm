@@ -1,4 +1,4 @@
-module Routing exposing (Route(..), blogPath, cvPath, facebookPath, meowPath, projectsPath, rootPath, routeParser)
+module Routing exposing (Route(..), blogPath, cvPath, meowPath, projectsPath, rootPath, routeParser)
 
 import Browser.Navigation exposing (Key)
 import Url.Parser exposing (..)
@@ -7,7 +7,6 @@ import Url.Parser exposing (..)
 type Route
     = MainRoute
     | CVRoute
-    | FacebookRoute
     | MeowRoute
     | ProjectsRoute
 
@@ -19,7 +18,6 @@ routeParser =
         , map CVRoute (s cvPath)
         , map MeowRoute (s meowPath)
         , map ProjectsRoute (s projectsPath)
-        , map FacebookRoute (s facebookPath)
         ]
 
 
@@ -31,11 +29,6 @@ blogPath =
 cvPath : String
 cvPath =
     "cv"
-
-
-facebookPath : String
-facebookPath =
-    "facebook"
 
 
 meowPath : String

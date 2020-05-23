@@ -5,7 +5,6 @@ import Html.Attributes exposing (alt, class, href, target)
 import Html.Events exposing (onClick)
 import Messages exposing (..)
 import Models exposing (Model)
-import Routing exposing (facebookPath)
 import SocialMedia.Models exposing (SocialMedium)
 
 

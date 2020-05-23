@@ -1,7 +1,6 @@
 module SocialMedia.Models exposing (SocialMedium, initialSocialMedia)
 
 import Messages exposing (Msg(..))
-import Routing exposing (facebookPath)
 
 
 type alias SocialMedium =
@@ -33,11 +32,6 @@ initialSocialMedia =
       , imageClass = "fa-twitter"
       , altText = "Twitter image link for @Pamplemouss_."
       , clickAction = Nothing
-      }
-    , { hrefTarget = ""
-      , imageClass = "fa-facebook"
-      , altText = "Facebook image link to some insights about social media."
-      , clickAction = Just (NavigateTo facebookPath)
       }
     , { hrefTarget = "https://github.com/Pamplemousse"
       , imageClass = "fa-github"
