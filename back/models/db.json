@@ -51,6 +51,7 @@
     "id": "5",
     "tileContent": "meuh on air",
     "title": "MeuhOnAir",
+    "seriousness": "hack",
     "dates": "december 2017",
     "tags": "python, development, ops",
     "links": [{
@@ -61,6 +62,7 @@
     "id": "6",
     "tileContent": "rusty calculator",
     "title": "A dummy \"calculator\" written in Rust",
+    "seriousness": "hack",
     "dates": "fall 2018",
     "tags": "rust",
     "links": [{
