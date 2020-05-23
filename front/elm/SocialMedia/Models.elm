@@ -18,11 +18,6 @@ initialSocialMedia =
       , altText = "Email image link mailing to xavier.maso@net-c.com ."
       , clickAction = Nothing
       }
-    , { hrefTarget = "https://pxlfd.me/Pamplemousse"
-      , imageClass = "fa-pixelfed"
-      , altText = "PixelFed image link for Xavier Maso's PixelFed profile."
-      , clickAction = Nothing
-      }
     , { hrefTarget = "https://mamot.fr/@Pamplemouss_"
       , imageClass = "fa-mastodon"
       , altText = "Mastodon image link for @Pamplemouss_."
