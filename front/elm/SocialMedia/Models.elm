@@ -16,6 +16,10 @@ initialSocialMedia =
       , imageClass = "fa-envelope-o"
       , altText = "Email image link mailing to xavier.maso@net-c.com ."
       }
+    , { hrefTarget = "https://matrix.to/#/@pamplemouss_:matrix.org"
+      , imageClass = "fa-matrix-org"
+      , altText = "Matrix image link for Xavier Maso's matrix profile."
+      }
     , { hrefTarget = "https://mamot.fr/@Pamplemouss_"
       , imageClass = "fa-mastodon"
       , altText = "Mastodon image link for @Pamplemouss_."
