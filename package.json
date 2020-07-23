@@ -40,7 +40,7 @@
     "standard": "^14.0.2",
     "style-loader": "^0.13.1",
     "stylus": "^0.52.4",
-    "uglifyjs-webpack-plugin": "^2.1.2",
+    "terser-webpack-plugin": "^3.0.7",
     "url-loader": "^0.5.7",
     "watchify": "^3.7.0",
     "webpack": "^4.29.0",

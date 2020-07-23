@@ -2,7 +2,7 @@ module Projects.View exposing (currentProjectView, view)
 
 import Html exposing (Html, div, text)
 import Html.Attributes exposing (class)
-import Http
+import HttpErrorWrapper exposing (buildErrorMessage)
 import List exposing (filter)
 import Messages exposing (..)
 import Models exposing (Model)
@@ -40,7 +40,7 @@ view model =
                 ]
 
         RemoteData.Failure error ->
-            text (Debug.toString error)
+            text (buildErrorMessage error)
 
 
 currentProjectView : Maybe Project -> Html Msg

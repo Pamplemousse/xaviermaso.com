@@ -4,7 +4,7 @@ var merge = require('webpack-merge')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
 var MiniCssExtractPlugin = require('mini-css-extract-plugin')
 var CopyWebpackPlugin = require('copy-webpack-plugin')
-var UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+var TerserPlugin = require('terser-webpack-plugin')
 var OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 
 console.log('WEBPACK GO!')
@@ -113,7 +113,12 @@ if (TARGET_ENV === 'production') {
         {
           test: /\.elm$/,
           exclude: [/elm-stuff/, /node_modules/],
-          use: 'elm-webpack-loader'
+          use: {
+            loader: 'elm-webpack-loader',
+            options: {
+              optimize: true
+            }
+          }
         },
         {
           test: /\.(css|scss)$/,
@@ -129,7 +134,17 @@ if (TARGET_ENV === 'production') {
 
     optimization: {
       minimizer: [
-        new UglifyJsPlugin(),
+        new TerserPlugin({
+          terserOptions: {
+            compress: {
+              pure_funcs: ['F2', 'F3', 'F4', 'F5', 'F6', 'F7', 'F8', 'F9', 'A2', 'A3', 'A4', 'A5', 'A6', 'A7', 'A8', 'A9'],
+              pure_getters: true,
+              keep_fargs: false,
+              unsafe_comps: true,
+              unsafe: true
+            }
+          }
+        }),
         new OptimizeCSSAssetsPlugin({})
       ]
     },
