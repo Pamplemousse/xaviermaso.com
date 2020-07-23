@@ -2,6 +2,7 @@ module Projects.View exposing (currentProjectView, view)
 
 import Html exposing (Html, div, text)
 import Html.Attributes exposing (class)
+import Http
 import List exposing (filter)
 import Messages exposing (..)
 import Models exposing (Model)

@@ -3,6 +3,7 @@ module CatGifs.View exposing (view)
 import Html exposing (Html, button, div, img, text)
 import Html.Attributes exposing (class, src)
 import Html.Events exposing (onClick)
+import Http
 import Messages exposing (..)
 import Models exposing (Model)
 import RemoteData exposing (WebData)
