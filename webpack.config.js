@@ -75,8 +75,7 @@ if (TARGET_ENV === 'development') {
             {
               loader: 'elm-webpack-loader',
               options: {
-                debug: true,
-                forceWatch: true
+                debug: true
               }
             }
           ]
