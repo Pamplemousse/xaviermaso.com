@@ -1,4 +1,4 @@
-FROM node:10
+FROM node:14
 
 RUN apt-get update && apt-get install apt-transport-https
 
