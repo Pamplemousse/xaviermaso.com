@@ -36,7 +36,7 @@ var commonConfig = {
 
   plugins: [
     new HtmlWebpackPlugin({
-      template: 'front/static/index.html',
+      template: path.join(__dirname, 'front', 'static', 'index.html'),
       inject: 'body',
       filename: 'index.html'
     }),
@@ -52,11 +52,14 @@ if (TARGET_ENV === 'development') {
 
   module.exports = merge(commonConfig, {
     entry: [
-      path.join(__dirname, 'front/static/index.js')
+      path.join(__dirname, 'front', 'static', 'index.js')
     ],
 
     devServer: {
-      contentBase: ['front/static/', 'front/static/documents/'],
+      contentBase: [
+        path.join(__dirname, 'front', 'static'),
+        path.join(__dirname, 'front', 'static', 'documents')
+      ],
       hot: true,
       host: '127.0.0.1',
       inline: true,
@@ -103,7 +106,7 @@ if (TARGET_ENV === 'production') {
   console.log('Building for prod...')
 
   module.exports = merge(commonConfig, {
-    entry: path.join(__dirname, 'front/static/index.js'),
+    entry: path.join(__dirname, 'front', 'static', 'index.js'),
 
     mode: 'production',
 
@@ -151,19 +154,19 @@ if (TARGET_ENV === 'production') {
     plugins: [
       new CopyWebpackPlugin([
         {
-          from: 'front/static/img/',
-          to: 'static/img/'
+          from: path.join(__dirname, 'front', 'static', 'img'),
+          to: path.join('static', 'img')
         },
         {
-          from: 'front/static/documents/xaviermaso.pdf',
+          from: path.join(__dirname, 'front', 'static', 'documents', 'xaviermaso.pdf'),
           to: 'xaviermaso.pdf'
         },
         {
-          from: 'front/static/documents/internship_report_2018.pdf',
+          from: path.join(__dirname, 'front', 'static', 'documents', 'internship_report_2018.pdf'),
           to: 'internship_report_2018.pdf'
         },
         {
-          from: 'front/static/img/favicon.ico'
+          from: path.join(__dirname, 'front', 'static', 'img', 'favicon.ico')
         }
       ]),
 
