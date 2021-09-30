@@ -16,7 +16,7 @@ var TARGET_ENV = process.env.npm_lifecycle_event === 'build' ? 'production' : 'd
 var commonConfig = {
   output: {
     path: path.resolve(__dirname, 'dist/'),
-    filename: '[hash].js'
+    filename: '[contenthash].js'
   },
 
   resolve: {
@@ -29,7 +29,7 @@ var commonConfig = {
     rules: [
       {
         test: /\.(eot|svg|ttf|woff(2)?)(\?v=\d+\.\d+\.\d+)?/,
-        use: 'url-loader'
+        type: 'asset/inline'
       }
     ]
   },
@@ -56,15 +56,19 @@ if (TARGET_ENV === 'development') {
     ],
 
     devServer: {
-      contentBase: [
-        path.join(__dirname, 'front', 'static'),
-        path.join(__dirname, 'front', 'static', 'documents')
+      static: [
+        {
+          directory: path.join(__dirname, 'front', 'static'),
+          watch: true
+        },
+        {
+          directory: path.join(__dirname, 'front', 'static', 'documents'),
+          watch: true
+        },
       ],
       hot: true,
       host: '127.0.0.1',
-      inline: true,
       port: 8080,
-      progress: true
     },
 
     mode: 'development',
@@ -75,6 +79,9 @@ if (TARGET_ENV === 'development') {
           test: /\.elm$/,
           exclude: [/elm-stuff/, /node_modules/],
           use: [
+            {
+              loader: 'elm-hot-webpack-loader'
+            },
             {
               loader: 'elm-webpack-loader',
               options: {
@@ -94,10 +101,6 @@ if (TARGET_ENV === 'development') {
         }
       ]
     },
-
-    plugins: [
-      new webpack.HotModuleReplacementPlugin()
-    ]
   })
 }
 
@@ -152,28 +155,30 @@ if (TARGET_ENV === 'production') {
     },
 
     plugins: [
-      new CopyWebpackPlugin([
-        {
-          from: path.join(__dirname, 'front', 'static', 'img'),
-          to: path.join('static', 'img')
-        },
-        {
-          from: path.join(__dirname, 'front', 'static', 'documents', 'xaviermaso.pdf'),
-          to: 'xaviermaso.pdf'
-        },
-        {
-          from: path.join(__dirname, 'front', 'static', 'documents', 'internship_report_2018.pdf'),
-          to: 'internship_report_2018.pdf'
-        },
-        {
-          from: path.join(__dirname, 'front', 'static', 'img', 'favicon.ico')
-        }
-      ]),
+      new CopyWebpackPlugin({
+        patterns: [
+          {
+            from: path.join(__dirname, 'front', 'static', 'img'),
+            to: path.join('static', 'img')
+          },
+          {
+            from: path.join(__dirname, 'front', 'static', 'documents', 'xaviermaso.pdf'),
+            to: 'xaviermaso.pdf'
+          },
+          {
+            from: path.join(__dirname, 'front', 'static', 'documents', 'internship_report_2018.pdf'),
+            to: 'internship_report_2018.pdf'
+          },
+          {
+            from: path.join(__dirname, 'front', 'static', 'img', 'favicon.ico')
+          }
+        ]
+      }),
 
       // extract CSS into a separate file
       new MiniCssExtractPlugin({
-        filename: '[hash].css',
-        chunkFilename: '[id].[hash].css'
+        filename: '[contenthash].css',
+        chunkFilename: '[id].[contenthash].css'
       })
     ]
   })
