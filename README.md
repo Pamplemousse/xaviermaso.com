@@ -36,6 +36,7 @@ docker run --rm -it \
 
 
 ## run the app
+
 ```bash
 docker run \
   --name xaviermaso.com \
@@ -43,3 +44,5 @@ docker run \
   -p 8080:8000 \
   pamplemousse/xaviermaso.com
 ```
+
+*Note: when running locally, the browser is expected to raise CORS errors, as the API URL is statically set to the production one during the front build.*
