@@ -3,7 +3,7 @@ module CatGifs.Commands exposing (..)
 import CatGifs.Models exposing (CatGif, CatGifsUrl)
 import Http exposing (expectJson)
 import Json.Decode as Decode
-import Json.Decode.Pipeline exposing (required)
+import Json.Decode.Pipeline exposing (requiredAt)
 import Messages exposing (Msg)
 import RemoteData
 
@@ -19,4 +19,4 @@ fetchCatGif url =
 decodeCatGifUrl : Decode.Decoder CatGif
 decodeCatGifUrl =
     Decode.succeed CatGif
-        |> required "data" (Decode.field "image_url" Decode.string)
+        |> requiredAt [ "data", "images", "original", "url" ] Decode.string
