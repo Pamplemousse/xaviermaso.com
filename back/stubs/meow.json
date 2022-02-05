@@ -1,0 +1,196 @@
+{
+	"data": {
+		"type": "gif",
+		"id": "127tgh2ry7zqYU",
+		"url": "https://giphy.com/gifs/hoppip-cat-hoppip-127tgh2ry7zqYU",
+		"slug": "hoppip-cat-hoppip-127tgh2ry7zqYU",
+		"bitly_gif_url": "http://gph.is/YZbCAm",
+		"bitly_url": "http://gph.is/YZbCAm",
+		"embed_url": "https://giphy.com/embed/127tgh2ry7zqYU",
+		"username": "hoppip",
+		"source": "http://hoppip.tumblr.com/post/45244987002/you-talkin-to-meow",
+		"title": "cat GIF by hoppip",
+		"rating": "g",
+		"content_url": "",
+		"source_tld": "hoppip.tumblr.com",
+		"source_post_url": "http://hoppip.tumblr.com/post/45244987002/you-talkin-to-meow",
+		"is_sticker": 0,
+		"import_datetime": "2013-03-13 03:46:00",
+		"trending_datetime": "1970-01-01 00:00:00",
+		"images": {
+			"downsized_large": {
+				"height": "433",
+				"size": "949388",
+				"url": "https://media2.giphy.com/media/127tgh2ry7zqYU/giphy.gif?cid=e1bb72ff96b5890fdc8cd2d91b6057875b820432c04697b8&rid=giphy.gif&ct=g",
+				"width": "500"
+			},
+			"fixed_height_small_still": {
+				"height": "100",
+				"size": "8619",
+				"url": "https://media2.giphy.com/media/127tgh2ry7zqYU/100_s.gif?cid=e1bb72ff96b5890fdc8cd2d91b6057875b820432c04697b8&rid=100_s.gif&ct=g",
+				"width": "116"
+			},
+			"original": {
+				"frames": "38",
+				"hash": "a749680c39bfd1868a8fc0559e97c67e",
+				"height": "433",
+				"mp4": "https://media2.giphy.com/media/127tgh2ry7zqYU/giphy.mp4?cid=e1bb72ff96b5890fdc8cd2d91b6057875b820432c04697b8&rid=giphy.mp4&ct=g",
+				"mp4_size": "455223",
+				"size": "949388",
+				"url": "https://media2.giphy.com/media/127tgh2ry7zqYU/giphy.gif?cid=e1bb72ff96b5890fdc8cd2d91b6057875b820432c04697b8&rid=giphy.gif&ct=g",
+				"webp": "https://media2.giphy.com/media/127tgh2ry7zqYU/giphy.webp?cid=e1bb72ff96b5890fdc8cd2d91b6057875b820432c04697b8&rid=giphy.webp&ct=g",
+				"webp_size": "1087378",
+				"width": "500"
+			},
+			"fixed_height_downsampled": {
+				"height": "200",
+				"size": "87167",
+				"url": "https://media2.giphy.com/media/127tgh2ry7zqYU/200_d.gif?cid=e1bb72ff96b5890fdc8cd2d91b6057875b820432c04697b8&rid=200_d.gif&ct=g",
+				"webp": "https://media2.giphy.com/media/127tgh2ry7zqYU/200_d.webp?cid=e1bb72ff96b5890fdc8cd2d91b6057875b820432c04697b8&rid=200_d.webp&ct=g",
+				"webp_size": "68838",
+				"width": "231"
+			},
+			"downsized_still": {
+				"height": "433",
+				"size": "949388",
+				"url": "https://media2.giphy.com/media/127tgh2ry7zqYU/giphy_s.gif?cid=e1bb72ff96b5890fdc8cd2d91b6057875b820432c04697b8&rid=giphy_s.gif&ct=g",
+				"width": "500"
+			},
+			"fixed_height_still": {
+				"height": "200",
+				"size": "25729",
+				"url": "https://media2.giphy.com/media/127tgh2ry7zqYU/200_s.gif?cid=e1bb72ff96b5890fdc8cd2d91b6057875b820432c04697b8&rid=200_s.gif&ct=g",
+				"width": "231"
+			},
+			"downsized_medium": {
+				"height": "433",
+				"size": "949388",
+				"url": "https://media2.giphy.com/media/127tgh2ry7zqYU/giphy.gif?cid=e1bb72ff96b5890fdc8cd2d91b6057875b820432c04697b8&rid=giphy.gif&ct=g",
+				"width": "500"
+			},
+			"downsized": {
+				"height": "433",
+				"size": "949388",
+				"url": "https://media2.giphy.com/media/127tgh2ry7zqYU/giphy.gif?cid=e1bb72ff96b5890fdc8cd2d91b6057875b820432c04697b8&rid=giphy.gif&ct=g",
+				"width": "500"
+			},
+			"preview_webp": {
+				"height": "120",
+				"size": "41034",
+				"url": "https://media2.giphy.com/media/127tgh2ry7zqYU/giphy-preview.webp?cid=e1bb72ff96b5890fdc8cd2d91b6057875b820432c04697b8&rid=giphy-preview.webp&ct=g",
+				"width": "138"
+			},
+			"original_mp4": {
+				"height": "414",
+				"mp4": "https://media2.giphy.com/media/127tgh2ry7zqYU/giphy.mp4?cid=e1bb72ff96b5890fdc8cd2d91b6057875b820432c04697b8&rid=giphy.mp4&ct=g",
+				"mp4_size": "455223",
+				"width": "480"
+			},
+			"fixed_height_small": {
+				"height": "100",
+				"mp4": "https://media2.giphy.com/media/127tgh2ry7zqYU/100.mp4?cid=e1bb72ff96b5890fdc8cd2d91b6057875b820432c04697b8&rid=100.mp4&ct=g",
+				"mp4_size": "26774",
+				"size": "112846",
+				"url": "https://media2.giphy.com/media/127tgh2ry7zqYU/100.gif?cid=e1bb72ff96b5890fdc8cd2d91b6057875b820432c04697b8&rid=100.gif&ct=g",
+				"webp": "https://media2.giphy.com/media/127tgh2ry7zqYU/100.webp?cid=e1bb72ff96b5890fdc8cd2d91b6057875b820432c04697b8&rid=100.webp&ct=g",
+				"webp_size": "109104",
+				"width": "116"
+			},
+			"fixed_height": {
+				"height": "200",
+				"mp4": "https://media2.giphy.com/media/127tgh2ry7zqYU/200.mp4?cid=e1bb72ff96b5890fdc8cd2d91b6057875b820432c04697b8&rid=200.mp4&ct=g",
+				"mp4_size": "94790",
+				"size": "346062",
+				"url": "https://media2.giphy.com/media/127tgh2ry7zqYU/200.gif?cid=e1bb72ff96b5890fdc8cd2d91b6057875b820432c04697b8&rid=200.gif&ct=g",
+				"webp": "https://media2.giphy.com/media/127tgh2ry7zqYU/200.webp?cid=e1bb72ff96b5890fdc8cd2d91b6057875b820432c04697b8&rid=200.webp&ct=g",
+				"webp_size": "321532",
+				"width": "231"
+			},
+			"downsized_small": {
+				"height": "266",
+				"mp4": "https://media2.giphy.com/media/127tgh2ry7zqYU/giphy-downsized-small.mp4?cid=e1bb72ff96b5890fdc8cd2d91b6057875b820432c04697b8&rid=giphy-downsized-small.mp4&ct=g",
+				"mp4_size": "93180",
+				"width": "307"
+			},
+			"preview": {
+				"height": "202",
+				"mp4": "https://media2.giphy.com/media/127tgh2ry7zqYU/giphy-preview.mp4?cid=e1bb72ff96b5890fdc8cd2d91b6057875b820432c04697b8&rid=giphy-preview.mp4&ct=g",
+				"mp4_size": "30791",
+				"width": "233"
+			},
+			"fixed_width_downsampled": {
+				"height": "173",
+				"size": "66004",
+				"url": "https://media2.giphy.com/media/127tgh2ry7zqYU/200w_d.gif?cid=e1bb72ff96b5890fdc8cd2d91b6057875b820432c04697b8&rid=200w_d.gif&ct=g",
+				"webp": "https://media2.giphy.com/media/127tgh2ry7zqYU/200w_d.webp?cid=e1bb72ff96b5890fdc8cd2d91b6057875b820432c04697b8&rid=200w_d.webp&ct=g",
+				"webp_size": "52002",
+				"width": "200"
+			},
+			"fixed_width_small_still": {
+				"height": "87",
+				"size": "6283",
+				"url": "https://media2.giphy.com/media/127tgh2ry7zqYU/100w_s.gif?cid=e1bb72ff96b5890fdc8cd2d91b6057875b820432c04697b8&rid=100w_s.gif&ct=g",
+				"width": "100"
+			},
+			"fixed_width_small": {
+				"height": "87",
+				"mp4": "https://media2.giphy.com/media/127tgh2ry7zqYU/100w.mp4?cid=e1bb72ff96b5890fdc8cd2d91b6057875b820432c04697b8&rid=100w.mp4&ct=g",
+				"mp4_size": "20778",
+				"size": "87704",
+				"url": "https://media2.giphy.com/media/127tgh2ry7zqYU/100w.gif?cid=e1bb72ff96b5890fdc8cd2d91b6057875b820432c04697b8&rid=100w.gif&ct=g",
+				"webp": "https://media2.giphy.com/media/127tgh2ry7zqYU/100w.webp?cid=e1bb72ff96b5890fdc8cd2d91b6057875b820432c04697b8&rid=100w.webp&ct=g",
+				"webp_size": "84130",
+				"width": "100"
+			},
+			"original_still": {
+				"height": "433",
+				"size": "88749",
+				"url": "https://media2.giphy.com/media/127tgh2ry7zqYU/giphy_s.gif?cid=e1bb72ff96b5890fdc8cd2d91b6057875b820432c04697b8&rid=giphy_s.gif&ct=g",
+				"width": "500"
+			},
+			"fixed_width_still": {
+				"height": "173",
+				"size": "20035",
+				"url": "https://media2.giphy.com/media/127tgh2ry7zqYU/200w_s.gif?cid=e1bb72ff96b5890fdc8cd2d91b6057875b820432c04697b8&rid=200w_s.gif&ct=g",
+				"width": "200"
+			},
+			"looping": {
+				"mp4": "https://media2.giphy.com/media/127tgh2ry7zqYU/giphy-loop.mp4?cid=e1bb72ff96b5890fdc8cd2d91b6057875b820432c04697b8&rid=giphy-loop.mp4&ct=g",
+				"mp4_size": "2036313"
+			},
+			"fixed_width": {
+				"height": "173",
+				"mp4": "https://media2.giphy.com/media/127tgh2ry7zqYU/200w.mp4?cid=e1bb72ff96b5890fdc8cd2d91b6057875b820432c04697b8&rid=200w.mp4&ct=g",
+				"mp4_size": "71541",
+				"size": "268273",
+				"url": "https://media2.giphy.com/media/127tgh2ry7zqYU/200w.gif?cid=e1bb72ff96b5890fdc8cd2d91b6057875b820432c04697b8&rid=200w.gif&ct=g",
+				"webp": "https://media2.giphy.com/media/127tgh2ry7zqYU/200w.webp?cid=e1bb72ff96b5890fdc8cd2d91b6057875b820432c04697b8&rid=200w.webp&ct=g",
+				"webp_size": "308080",
+				"width": "200"
+			},
+			"preview_gif": {
+				"height": "105",
+				"size": "47655",
+				"url": "https://media2.giphy.com/media/127tgh2ry7zqYU/giphy-preview.gif?cid=e1bb72ff96b5890fdc8cd2d91b6057875b820432c04697b8&rid=giphy-preview.gif&ct=g",
+				"width": "121"
+			},
+			"480w_still": {
+				"url": "https://media1.giphy.com/media/127tgh2ry7zqYU/480w_s.jpg?cid=e1bb72ff96b5890fdc8cd2d91b6057875b820432c04697b8&rid=480w_s.jpg&ct=g",
+				"width": "480",
+				"height": "416"
+			}
+		},
+		"user": {
+			"avatar_url": "https://media0.giphy.com/avatars/hoppip.png",
+			"banner_image": "",
+			"banner_url": "",
+			"profile_url": "https://giphy.com/hoppip/",
+			"username": "hoppip",
+			"display_name": "hoppip",
+			"description": "I think the magic of the GIF medium is actually the limitations it has: you have to try to express and idea through a small piece of graphic media that compresses pixels. One thing that is really unique about this medium is its capacity of looping infinitely which really opens a lot of possibilities on storytelling.",
+			"is_verified": true,
+			"website_url": "http://hoppip.tumblr.com",
+			"instagram_url": "https://instagram.com/kittenrains"
+		}
+	}
+}

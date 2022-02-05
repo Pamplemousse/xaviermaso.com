@@ -14,9 +14,15 @@ var server = app.listen(8000, function () {
 app.use(logger('dev'))
 app.use(express.static(path.join(__dirname, '../dist')))
 
-// allow access control from different origin in non production mode
 if (process.env.NODE_ENV !== 'production') {
+  // allow access control from different origin in non production mode
   app.use(cors())
+
+  // expose a stubbed giphy's API response in non production mode
+  app.use('/api/meow', function (req, res) {
+    res.header('Content-Type', 'application/json')
+    res.sendFile(path.join(__dirname, 'stubs/meow.json'))
+  })
 }
 
 app.use('/api/projects', require('./routes/projects'))
