@@ -64,11 +64,11 @@ if (TARGET_ENV === 'development') {
         {
           directory: path.join(__dirname, 'front', 'static', 'documents'),
           watch: true
-        },
+        }
       ],
       hot: true,
       host: '127.0.0.1',
-      port: 8080,
+      port: 8080
     },
 
     mode: 'development',
@@ -100,7 +100,7 @@ if (TARGET_ENV === 'development') {
           ]
         }
       ]
-    },
+    }
   })
 }
 
