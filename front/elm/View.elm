@@ -106,21 +106,6 @@ mainView =
         ]
 
 
-formatLink : ( String, String ) -> Html Msg
-formatLink ( destination, title ) =
-    div [ class "row" ]
-        [ a
-            [ href destination
-            , target "_blank"
-            , class "resource-link"
-            ]
-            [ text title ]
-        , text " "
-        , i [ class "fa fa-link" ]
-            []
-        ]
-
-
 formatTextLine : String -> Html Msg
 formatTextLine textline =
     div [ class "row textline" ]
