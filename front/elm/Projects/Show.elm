@@ -1,7 +1,7 @@
 module Projects.Show exposing (formatLink, view)
 
 import Html exposing (..)
-import Html.Attributes exposing (class, href, id, property, style, target)
+import Html.Attributes exposing (class, href, id, property, rel, style, target)
 import Html.Events exposing (onClick)
 import Html.Parser exposing (run)
 import Html.Parser.Util exposing (toVirtualDom)
@@ -68,5 +68,5 @@ formatLink link =
                     value
     in
     h3 []
-        [ a [ href link.target, target "_blank" ] [ text link_value ]
+        [ a [ href link.target, rel "noreferrer", target "_blank" ] [ text link_value ]
         ]
