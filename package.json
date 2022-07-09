@@ -13,8 +13,10 @@
     "start:front": "webpack serve"
   },
   "dependencies": {
+    "axios": "^0.27.2",
     "cors": "^2.8.4",
     "express": "^4.17.0",
+    "express-slow-down": "^1.4.0",
     "fork-awesome": "^1.2.0",
     "fs-readfile-promise": "^3.0.0",
     "morgan": "^1.10.0"
