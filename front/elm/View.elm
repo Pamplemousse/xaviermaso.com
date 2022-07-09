@@ -5,6 +5,7 @@ import CatGifs.View exposing (..)
 import Html exposing (Html, a, br, button, div, h6, i, object, text)
 import Html.Attributes exposing (..)
 import Html.Events exposing (onClick)
+import HttpErrorWrapper exposing (buildErrorMessage)
 import Messages exposing (..)
 import Models exposing (Model)
 import Projects.View exposing (..)
@@ -57,14 +58,14 @@ notFoundView =
 projectsView : Model -> Html Msg
 projectsView model =
     div []
-        [ Projects.View.view model
+        [ Projects.View.view model.projects model.currentProjects
         ]
 
 
 meowView : Model -> Html Msg
 meowView model =
     div []
-        [ CatGifs.View.view model
+        [ CatGifs.View.view model.currentCatGif
         ]
 
 

@@ -1,17 +1,17 @@
 module CatGifs.View exposing (view)
 
+import CatGifs.Models exposing (CatGif)
 import Html exposing (Html, button, div, img, text)
 import Html.Attributes exposing (class, src)
 import Html.Events exposing (onClick)
 import HttpErrorWrapper exposing (buildErrorMessage)
 import Messages exposing (..)
-import Models exposing (Model)
 import RemoteData exposing (WebData)
 
 
-view : Model -> Html Msg
-view model =
-    case model.currentCatGif of
+view : WebData CatGif -> Html Msg
+view currentCatGif =
+    case currentCatGif of
         RemoteData.NotAsked ->
             text ""
 

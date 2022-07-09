@@ -13,9 +13,9 @@ import RemoteData exposing (WebData)
 import Tuple exposing (first, second)
 
 
-view : Model -> Html Msg
-view model =
-    case model.projects of
+view : WebData (List Project) -> ( Maybe Project, Maybe Project ) -> Html Msg
+view receivedProjects currentProjects =
+    case receivedProjects of
         RemoteData.NotAsked ->
             text ""
 
@@ -32,10 +32,10 @@ view model =
             in
             div []
                 [ div [ class "projects-header" ] [ text "serious stuff" ]
-                , currentProjectView (first model.currentProjects)
+                , currentProjectView (first currentProjects)
                 , Projects.List.view seriousProjects
                 , div [ class "projects-header" ] [ text "less serious stuff" ]
-                , currentProjectView (second model.currentProjects)
+                , currentProjectView (second currentProjects)
                 , Projects.List.view hacks
                 ]
 
