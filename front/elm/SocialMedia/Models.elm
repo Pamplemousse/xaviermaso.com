@@ -24,10 +24,6 @@ initialSocialMedia =
       , imageClass = "fa-mastodon"
       , altText = "Mastodon image link for @Pamplemouss_."
       }
-    , { hrefTarget = "https://twitter.com/Pamplemouss_"
-      , imageClass = "fa-twitter"
-      , altText = "Twitter image link for @Pamplemouss_."
-      }
     , { hrefTarget = "https://stackexchange.com/users/2615988/pamplemouss?tab=accounts"
       , imageClass = "fa-stack-overflow"
       , altText = "Stack Overflow image link for Xavier Maso's Stack Exchange profile."
