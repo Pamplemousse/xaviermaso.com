@@ -12,9 +12,9 @@ type alias SocialMedium =
 
 initialSocialMedia : List SocialMedium
 initialSocialMedia =
-    [ { hrefTarget = "mailto:xavier.maso@net-c.com"
+    [ { hrefTarget = "mailto:contact@xaviermaso.com"
       , imageClass = "fa-envelope-o"
-      , altText = "Email image link mailing to xavier.maso@net-c.com ."
+      , altText = "Email image link mailing to contact@xaviermaso.com."
       }
     , { hrefTarget = "https://matrix.to/#/@pamplemouss_:matrix.org"
       , imageClass = "fa-matrix-org"
