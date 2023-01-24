@@ -5,7 +5,7 @@ var HtmlWebpackPlugin = require('html-webpack-plugin')
 var MiniCssExtractPlugin = require('mini-css-extract-plugin')
 var CopyWebpackPlugin = require('copy-webpack-plugin')
 var TerserPlugin = require('terser-webpack-plugin')
-var OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
+var OptimizeCSSAssetsPlugin = require('css-minimizer-webpack-plugin')
 
 console.log('WEBPACK GO!')
 
@@ -80,7 +80,7 @@ if (TARGET_ENV === 'development') {
           exclude: [/elm-stuff/, /node_modules/],
           use: [
             {
-              loader: 'elm-hot-webpack-loader'
+              loader: 'elm-reloader'
             },
             {
               loader: 'elm-webpack-loader',
