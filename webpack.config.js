@@ -93,7 +93,7 @@ if (TARGET_ENV === 'development') {
         {
           test: /\.(css|scss)$/,
           use: [
-            { loader: 'style-loader', options: { sourceMap: true } },
+            'style-loader',
             { loader: 'css-loader', options: { sourceMap: true } },
             { loader: 'postcss-loader', options: { sourceMap: true } },
             { loader: 'sass-loader', options: { sourceMap: true } }
