@@ -16,7 +16,7 @@ const speedLimiter = slowDown({
 router.get('/', speedLimiter, function (req, res) {
   if (process.env.NODE_ENV !== 'production') {
     // Expose a stubbed giphy's API response in non production mode.
-    res.sendFile(path.join(__dirname, '../stubs/meow.json'))
+    return res.sendFile(path.join(__dirname, '../stubs/meow.json'))
   }
 
   // "Proxy" to the Giphy API to get a random cat GIF.
