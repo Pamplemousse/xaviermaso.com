@@ -2,7 +2,7 @@ module Projects.Models exposing (Link, Project, ProjectId, ProjectsUrl)
 
 
 type alias ProjectId =
-    String
+    Int
 
 
 type alias ProjectsUrl =

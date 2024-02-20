@@ -24,7 +24,7 @@ projectsDecoder =
 projectDecoder : Decode.Decoder Project
 projectDecoder =
     Decode.succeed Project
-        |> required "id" Decode.string
+        |> required "id" Decode.int
         |> required "tileContent" Decode.string
         |> required "title" Decode.string
         |> optional "seriousness" (Decode.map Just Decode.string) Nothing

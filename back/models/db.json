@@ -1,6 +1,6 @@
 {
   "projects": [{
-    "id": "0",
+    "id": 0,
     "tileContent": "owasp-zap",
     "title": "OWASP ZAP",
     "dates": "may 2018 - today",
@@ -11,7 +11,7 @@
     }],
     "description": "Intern at Mozilla during the summer of 2018 in the <a href='https://wiki.mozilla.org/Security/FirefoxOperations' target='_blank'>FoxSec</a> team. I worked on improving <a href='https://www.owasp.org/index.php/OWASP_Zed_Attack_Proxy_Project'>OWASP ZAP</a>, for it to be able to scan \"modern\" web applications.<br/>The effort has been focused around two keys areas: write the <a href='https://github.com/zaproxy/zaproxy/issues/4939' target='_blank'>FrontEndScanner addon</a> (not yet released) for ZAP to allow users to run \"client-side scripts\"; and create a front-end library to help debug modern web pages: the <a href='https://www.npmjs.com/package/@zaproxy/front-end-tracker' target='_blank'>@zaproxy/front-end-tracker</a>."
   }, {
-    "id": "1",
+    "id": 1,
     "tileContent": "redshield",
     "title": "RedShield (pro)",
     "dates": "january 2015 - april 2016",
@@ -21,14 +21,14 @@
      }],
     "description": "Not my own project: I was working as a Software Engineer at RedShield for a year and half.<br/>RedShield is a \"Shielding-with-a-service\" company providing a web application firewall, vulnerability scanner and analyzer to assist IT departments ensure the security of their systems."
   }, {
-    "id": "2",
+    "id": 2,
     "tileContent": "personal stack",
     "title": "Personal Stack",
     "dates": "2014 - today",
     "tags": "devops, docker, ansible",
     "description": "Co-owner of a dedicated server, used to manage personal services such as Gogits, Owncloud, Selfoss, Etherpad, Wallabag and websites.<br/>Running on Debian machines whose configuration has been automated with Ansible, and using Docker containers for modularity and isolation."
   }, {
-    "id": "3",
+    "id": 3,
     "tileContent": "cheminot.cer-sncf-bx.org",
     "title": "Front-end for SNCF's employees (pro)",
     "dates": "december 2013 - august 2014",
@@ -38,7 +38,7 @@
     }],
     "description": "Subject of my master thesis: build a website dedicated to SNCF’s employees.<br/>I was responsible of the whole project:<ul><li>Tasks and planning definition, resources and skills affectation to provide this new service within six months with a three person team.</li><li>Communication and product launching: define and reach targets, follow the adoption and usage of the product.</li><li>Integration within the existing information system: shared databases services management, web server deployment.</li><li>Quality management by software testing using Rspec and Capybara.</li><li>Git and Capistrano for code management and automated deployment.</li></ul>Back-end was written in Ruby-On-Rails. Front-end used Slim, SASS and CoffeeScript.<br/>The application was served by Nginx and Unicorn on an Ubuntu server. The database was PostgreSQL."
   }, {
-    "id": "4",
+    "id": 4,
     "tileContent": "xaviermaso.com",
     "title": "xaviermaso.com",
     "dates": "2014 - today",
@@ -48,7 +48,7 @@
     }],
     "description": "The gorgeous website you are looking at right now.<br/>Front-end written in Elm, back-end powered by ExpressJS."
   }, {
-    "id": "5",
+    "id": 5,
     "tileContent": "meuh on air",
     "title": "MeuhOnAir",
     "seriousness": "hack",
@@ -59,7 +59,7 @@
     }],
     "description": "Fan of <a target='_blank' href='http://www.radiomeuh.com/'>RadioMeuh.com</a> (French webradio), I made a Mastodon live stream of their playlist.<br/>It's Python code scrapping their playlist, comparing to what has already been published thanks to a Redis store, then calling the Mastodon API to toot what's necessary. Everything scheduled from Heroku."
   }, {
-    "id": "6",
+    "id": 6,
     "tileContent": "rusty calculator",
     "title": "A dummy \"calculator\" written in Rust",
     "seriousness": "hack",
@@ -70,7 +70,7 @@
     }],
     "description": "Wanting to test and learn more about Rust and the compilation process.<br/>Given a mathematical expression to compute, represented as a string, the program performs the following: <ul><li>tokenization;</li><li>parsing to produce an AST using the <a target='_blank' href='https://en.wikipedia.org/wiki/Shunting_yard_algorithm'>Shunting Yard algorithm</a>;</li><li>evaluation of this AST to compute the result.</li></ul>"
   }, {
-    "id": "10",
+    "id": 10,
     "tileContent": "alfred",
     "title": "Alfred",
     "seriousness": "hack",
@@ -81,7 +81,7 @@
     }],
     "description": "My very own \"personal assistant\". Even though I have great plans for him, this project is abandonned (for now...).<br/>Triggered by a text that I send to him (well, I got rid of my smartphone), all it does is scrapping my University schedule (from Autumn 2018), recognize my lectures, and send me a text back to inform me at which time and where the next one will happen.<br/>This project involve a bit of web scrapping, interacting with the Twilio api. It is written in Ruby and running on Heroku."
   }, {
-    "id": "11",
+    "id": 11,
     "tileContent": "owasp-top-ten",
     "title": "OwaspTopTen",
     "seriousness": "hack",
@@ -92,7 +92,7 @@
     }],
     "description": "Challenge from \"Nuit De L’Info\" to develop an app vulnerable to the 2017 OWASP Top 10.<br/>With a team of 3 students, working a couple of hours, we developped a vulnerable app containing 10 web pages each aiming to demonstrate one of the 2017 Owasp Top Ten point. Three were fully integrated, one was in progress.<br/>It has been implemented using Flask (a Python web microframework)."
   }, {
-    "id": "12",
+    "id": 12,
     "tileContent": "librarybox",
     "title": "LibraryBox",
     "seriousness": "hack",
@@ -103,7 +103,7 @@
     }],
     "description": "Development of a clear an good looking web interface for <a target='_blank' href='http://librarybox.us/'>LibraryBoxes</a>. <br/>Project done in AngularJS, used Bower for libraries management and Gulp as build system."
   }, {
-    "id": "13",
+    "id": 13,
     "tileContent": "carrotmob",
     "title": "CarrotMob France",
     "seriousness": "hack",
@@ -111,7 +111,7 @@
     "tags": "nodejs stack (sailsjs, grunt, bower), associative entrepreneurship",
     "description": "Carrotmob France was a French non profit association organizing buycotts events to reward business’s commitment to making responsible social, economic and environmental changes.<br/>We were about ten persons organized to work remotely and following the Scrum method using Trello, Hangout, Skype and Github.<br/>I participated building the web-app, which front and back-end were using SailsJS, Bower, Jade and Grunt tasks."
   }, {
-    "id": "14",
+    "id": 14,
     "tileContent": "dice of life @ govhack",
     "title": "Loaded Dice Of Life",
     "seriousness": "hack",
@@ -121,7 +121,7 @@
       "target": "https://github.com/LoadedDiceOfLife"
     }]
   }, {
-    "id": "15",
+    "id": 15,
     "tileContent": "wheredrop",
     "title": "Wheredrop",
     "seriousness": "hack",
@@ -132,7 +132,7 @@
     }],
     "description": "Lead by Gironde communities (AEC, CUB and CG33), a team of seven volunteers gathered to establish a web service which Gironde’s citizens could use to search and find places to throw their waste.<br/>The application was developed with AngularJS and served by Ruby, and is (sadly) not online anymore."
   }, {
-    "id": "16",
+    "id": 16,
     "tileContent": "bemydiary @ bemyapp",
     "title": "BeMyDiary",
     "seriousness": "hack",
@@ -140,21 +140,21 @@
     "tags": "project management, communication, entrepreneurship, opendata",
     "description": "First prize awarded in Gironde in a 48 hours hackaton with the following constraint: use open data to highlight and promote tourism of our region (Aquitaine).<br/>Organizing a team of six people, web and mobile development and finally presentating the project in front of a jury and public."
   }, {
-    "id": "17",
+    "id": 17,
     "tileContent": "la console @ swto",
     "title": "Startup Weekend Toulouse",
     "seriousness": "hack",
     "dates": "march 2013",
     "tags": "project management, communication, marketing, entrepreneurship"
   }, {
-    "id": "18",
+    "id": 18,
     "tileContent": "cooking @ imaginecup",
     "title": "CooKing",
     "seriousness": "hack",
     "dates": "december 2010 - may 2011",
     "tags": "project management, game development, communication"
   }, {
-    "id": "19",
+    "id": 19,
     "tileContent": "humanutty @ imaginecup",
     "title": "HumaNutty",
     "seriousness": "hack",
