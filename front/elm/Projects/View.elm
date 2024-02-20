@@ -23,20 +23,10 @@ view receivedProjects currentProjects =
             text "Loading..."
 
         RemoteData.Success projects ->
-            let
-                seriousProjects =
-                    filter (\project -> project.seriousness /= Just "hack") projects
-
-                hacks =
-                    filter (\project -> project.seriousness == Just "hack") projects
-            in
             div []
-                [ div [ class "projects-header" ] [ text "serious stuff" ]
+                [ div [ class "projects-header" ] [ text "Sometimes I like to spend time and energy working on tech-related things. Here some of the most notable, if not glorious, not-solely-professional ventures I have or had going." ]
                 , currentProjectView (first currentProjects)
-                , Projects.List.view seriousProjects
-                , div [ class "projects-header" ] [ text "less serious stuff" ]
-                , currentProjectView (second currentProjects)
-                , Projects.List.view hacks
+                , Projects.List.view projects
                 ]
 
         RemoteData.Failure error ->
