@@ -34,7 +34,7 @@
     "elm-webpack-loader": "^8.0.0",
     "html-webpack-plugin": "^5.3.0",
     "mini-css-extract-plugin": "^2.7.2",
-    "node-sass": "^7.0.0",
+    "node-sass": "^9.0.0",
     "postcss-loader": "^7.0.2",
     "rimraf": "^2.5.2",
     "sass-loader": "^13.2.0",
