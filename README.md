@@ -1,10 +1,9 @@
 # xavier maso's website
 
-  ![](https://travis-ci.org/Pamplemousse/xaviermaso.com.svg?branch=master)
-  ![Known Vulnerabilities](https://snyk.io/test/github/Pamplemousse/xaviermaso.com/badge.svg?targetFile=package.json)
+![Known Vulnerabilities](https://snyk.io/test/github/Pamplemousse/xaviermaso.com/badge.svg?targetFile=package.json)
 
-  * powered by [expressjs](http://expressjs.com/) and [elm](http://elm-lang.org/)
-  * running live at [xaviermaso.com](https://www.xaviermaso.com/)
+* powered by [expressjs](http://expressjs.com/) and [elm](http://elm-lang.org/)
+* running live at [xaviermaso.com](https://www.xaviermaso.com/)
 
 ## development
 
@@ -34,7 +33,6 @@ docker run --rm -it \
     ...
 ```
 
-
 ## run the app
 
 ```bash
@@ -44,5 +42,3 @@ docker run \
   -p 8080:8000 \
   pamplemousse/xaviermaso.com
 ```
-
-*Note: when running locally, the browser is expected to raise CORS errors, as the API URL is statically set to the production one during the front build.*
