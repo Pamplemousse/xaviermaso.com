@@ -25,10 +25,10 @@ npm run check
 *Note: [this docker image](https://hub.docker.com/r/pamplemousse/nodejs/) should contain all the tools to run and build the app.*
 
 ```bash
-docker run --rm -it \
+podman run --rm -it \
     -v $(pwd):/app -w /app \
     -u 1000:1000 \
-    --net host -p 8000:8000 -p 8080:8080 \
+    -p 8000:8000 -p 8080:8080 \
     pamplemousse/nodejs
     ...
 ```
@@ -36,7 +36,7 @@ docker run --rm -it \
 ## run the app
 
 ```bash
-docker run \
+podman run \
   --name xaviermaso.com \
   -e NODE_ENV=production \
   -p 8080:8000 \
