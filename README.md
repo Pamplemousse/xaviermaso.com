@@ -8,6 +8,9 @@
 ## development
 
 ```bash
+# development environment is provided using `nix`
+nix develop
+
 # install dependencies
 npm install
 elm make
