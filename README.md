@@ -9,7 +9,7 @@
 
 ```bash
 # install dependencies
-yarn install
+npm install
 elm make
 
 # run the app in dev mode
@@ -20,17 +20,6 @@ npm run build
 
 # syntax checking and formatting
 npm run check
-```
-
-*Note: [this docker image](https://hub.docker.com/r/pamplemousse/nodejs/) should contain all the tools to run and build the app.*
-
-```bash
-podman run --rm -it \
-    -v $(pwd):/app -w /app \
-    -u 1000:1000 \
-    -p 8000:8000 -p 8080:8080 \
-    pamplemousse/nodejs
-    ...
 ```
 
 ## run the app
