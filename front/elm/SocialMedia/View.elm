@@ -17,10 +17,6 @@ formatSocialLogo socialMedium =
 view : Model -> Html Msg
 view model =
     div [ class "row top-line" ]
-        [ div [ class "col-md-8" ]
-            [ div [ class "col-md-8" ]
-                [ div [ class "row social" ]
-                    (List.map formatSocialLogo model.socialMedia)
-                ]
-            ]
+        [ div [ class "text-end" ]
+            (List.map formatSocialLogo model.socialMedia)
         ]

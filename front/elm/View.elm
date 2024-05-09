@@ -115,8 +115,8 @@ formatTextLine textline =
 
 nameLine : Html Msg
 nameLine =
-    div [ class "row name-line" ]
-        [ div [ class "name", onClick (NavigateTo rootPath) ]
+    div [ class "row" ]
+        [ div [ class "name text-end", onClick (NavigateTo rootPath) ]
             [ text "Xavier Maso" ]
         ]
 
@@ -124,7 +124,7 @@ nameLine =
 footer : Html Msg
 footer =
     div [ class "row footer" ]
-        [ div [ class "col-md-2 col-md-offset-10" ]
+        [ div [ class "col-md-2 offset-md-10" ]
             [ div [ class "section" ]
                 [ h6 [ onClick (NavigateTo meowPath) ]
                     [ text "Such reserved rights." ]
