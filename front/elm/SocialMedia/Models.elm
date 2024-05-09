@@ -32,7 +32,7 @@ initialSocialMedia =
       , imageClass = "fa-github"
       , altText = "Github image link for Pamplemousse's account."
       }
-    , { hrefTarget = "https://www.linkedin.com/pub/xavier-maso/39/4a/96b"
+    , { hrefTarget = "https://www.linkedin.com/in/%F0%9F%8D%8A-xavier-maso-96b04a39/"
       , imageClass = "fa-linkedin"
       , altText = "Linkedin image link for Xavier Maso's linkedin profile."
       }
