@@ -31,10 +31,7 @@ view project =
             [ div [ class "project-description lightGreen" ]
                 [ h1 [] [ text project.title ]
                 , h3
-                    [ style "position" "absolute"
-                    , style "top" "18px"
-                    , style "right" "55px"
-                    ]
+                    [ class "date" ]
                     [ text project.dates ]
                 , h4 [] [ text project.tags ]
                 , div [ class "row" ]
@@ -44,10 +41,7 @@ view project =
                     ]
                 , div [] (List.map formatLink project.links)
                 , i
-                    [ class "fa fa-close fa-2x"
-                    , style "position" "absolute"
-                    , style "top" "10px"
-                    , style "right" "23px"
+                    [ class "fa fa-close fa-2x close"
                     , onClick (CloseProjectDescription project)
                     ]
                     []

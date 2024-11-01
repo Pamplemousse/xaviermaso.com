@@ -99,9 +99,22 @@ a:hover {
 .project-description {
   padding       : 10px;
   margin-bottom : 25px;
+  position      : relative;
 
   a {
     text-decoration : underline;
+  }
+
+  .close {
+    position : absolute;
+    top      : 10px;
+    right    : 10px;
+  }
+
+  .date {
+    position : absolute;
+    top      : 10px;
+    right    : 2 * 10px + 20px;
   }
 }
 
