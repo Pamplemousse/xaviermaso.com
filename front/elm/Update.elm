@@ -82,7 +82,7 @@ update msg model =
                     , Cmd.none
                     )
 
-        CloseProjectDescription project ->
+        CloseDescriptionOf project ->
             case project.seriousness of
                 Just "hack" ->
                     ( { model | currentProjects = ( currentSeriousProject, Nothing ) }

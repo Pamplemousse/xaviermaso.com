@@ -14,5 +14,5 @@ type Msg
     | OnFetchCatGif (WebData CatGif)
     | NavigateTo String
     | RedirectTo String
-    | CloseProjectDescription Project
+    | CloseDescriptionOf Project
     | ShowDescriptionOf Project

@@ -42,7 +42,7 @@ view project =
                 , div [] (List.map formatLink project.links)
                 , i
                     [ class "fa fa-close fa-2x close"
-                    , onClick (CloseProjectDescription project)
+                    , onClick (CloseDescriptionOf project)
                     ]
                     []
                 ]
