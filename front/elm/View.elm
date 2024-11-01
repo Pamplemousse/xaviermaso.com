@@ -2,18 +2,17 @@ module View exposing (view)
 
 import Browser exposing (Document)
 import CatGifs.View exposing (..)
-import Html exposing (Html, a, br, button, div, h6, i, object, text)
+import Html exposing (Html, a, br, button, div, h6, object, text)
 import Html.Attributes exposing (..)
 import Html.Events exposing (onClick)
-import HttpErrorWrapper exposing (buildErrorMessage)
-import Messages exposing (..)
+import Messages exposing (Msg(..))
 import Models exposing (Model)
-import Projects.View exposing (..)
+import Projects.View
 import Routing exposing (blogPath, cvPath, meowPath, projectsPath, rootPath)
 import SocialMedia.View exposing (view)
 
 
-view : Model -> Browser.Document Msg
+view : Model -> Document Msg
 view model =
     let
         layoutify =
@@ -105,12 +104,6 @@ mainView =
             [ button [ class "tile orange", onClick (NavigateTo cvPath) ] [ text "CV" ]
             ]
         ]
-
-
-formatTextLine : String -> Html Msg
-formatTextLine textline =
-    div [ class "row textline" ]
-        [ text textline ]
 
 
 nameLine : Html Msg

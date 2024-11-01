@@ -6,11 +6,10 @@ import CatGifs.Commands exposing (fetchCatGif)
 import Messages exposing (Msg(..))
 import Models exposing (..)
 import Projects.Messages exposing (Msg(..))
-import Projects.Models
 import Projects.Update
 import Routing exposing (Route(..), routeParser)
 import Tuple exposing (mapBoth)
-import Url exposing (Url)
+import Url
 import Url.Parser exposing (parse)
 
 

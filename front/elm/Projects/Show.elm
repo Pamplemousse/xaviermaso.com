@@ -1,11 +1,10 @@
 module Projects.Show exposing (formatLink, view)
 
-import Html exposing (..)
-import Html.Attributes exposing (class, href, id, property, rel, style, target)
+import Html exposing (Html, a, div, h1, h3, h4, i, text)
+import Html.Attributes exposing (class, href, rel, target)
 import Html.Events exposing (onClick)
 import Html.Parser exposing (run)
 import Html.Parser.Util exposing (toVirtualDom)
-import Json.Encode exposing (string)
 import Projects.Messages exposing (Msg(..))
 import Projects.Models exposing (Link, Project)
 

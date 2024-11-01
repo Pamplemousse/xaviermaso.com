@@ -1,7 +1,6 @@
 module Routing exposing (Route(..), blogPath, cvPath, meowPath, projectsPath, rootPath, routeParser)
 
-import Browser.Navigation exposing (Key)
-import Url.Parser exposing (..)
+import Url.Parser exposing (Parser, map, oneOf, s, top)
 
 
 type Route

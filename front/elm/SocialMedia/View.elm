@@ -2,7 +2,7 @@ module SocialMedia.View exposing (view)
 
 import Html exposing (Html, a, div, i)
 import Html.Attributes exposing (alt, class, href, rel, target)
-import Messages exposing (..)
+import Messages exposing (Msg)
 import Models exposing (Model)
 import SocialMedia.Models exposing (SocialMedium)
 

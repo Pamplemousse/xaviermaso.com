@@ -1,7 +1,7 @@
 module Projects.List exposing (projectTile, view)
 
 import Html exposing (..)
-import Html.Attributes exposing (class, href)
+import Html.Attributes exposing (class)
 import Html.Events exposing (onClick)
 import Projects.Messages exposing (..)
 import Projects.Models exposing (Project)

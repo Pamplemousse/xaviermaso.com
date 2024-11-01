@@ -3,12 +3,11 @@ module Projects.View exposing (currentProjectView, view)
 import Html exposing (Html, div, text)
 import Html.Attributes exposing (class)
 import HttpErrorWrapper exposing (buildErrorMessage)
-import List exposing (filter)
 import Projects.List exposing (view)
 import Projects.Messages exposing (Msg)
 import Projects.Models exposing (Model, Project)
 import Projects.Show exposing (view)
-import RemoteData exposing (WebData)
+import RemoteData
 
 
 view : Model -> Html Msg
