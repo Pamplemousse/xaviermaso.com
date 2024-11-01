@@ -4,28 +4,27 @@ import Html exposing (Html, div, text)
 import Html.Attributes exposing (class)
 import HttpErrorWrapper exposing (buildErrorMessage)
 import List exposing (filter)
-import Messages exposing (..)
-import Models exposing (Model)
 import Projects.List exposing (view)
-import Projects.Models exposing (Project)
+import Projects.Messages exposing (Msg)
+import Projects.Models exposing (Model, Project)
 import Projects.Show exposing (view)
 import RemoteData exposing (WebData)
 
 
-view : WebData (List Project) -> Maybe Project -> Html Msg
-view receivedProjects currentProject =
-    case receivedProjects of
+view : Model -> Html Msg
+view { all, current } =
+    case all of
         RemoteData.NotAsked ->
             text ""
 
         RemoteData.Loading ->
             text "Loading..."
 
-        RemoteData.Success projects ->
+        RemoteData.Success ps ->
             div []
                 [ div [ class "projects-header" ] [ text "Sometimes I like to spend time and energy working on tech-related things. Here some of the most notable, if not glorious, not-solely-professional ventures I have or had going." ]
-                , currentProjectView currentProject
-                , Projects.List.view projects
+                , currentProjectView current
+                , Projects.List.view ps
                 ]
 
         RemoteData.Failure error ->

@@ -1,11 +1,13 @@
-module Projects.Models exposing (Link, Project, ProjectId, ProjectsUrl)
+module Projects.Models exposing (Id, Link, Model, Project, Url, initialModel)
+
+import RemoteData exposing (WebData)
 
 
-type alias ProjectId =
+type alias Id =
     Int
 
 
-type alias ProjectsUrl =
+type alias Url =
     String
 
 
@@ -16,11 +18,24 @@ type alias Link =
 
 
 type alias Project =
-    { id : ProjectId
+    { id : Id
     , tileContent : String
     , title : String
     , dates : String
     , tags : String
     , links : List Link
     , description : Maybe String
+    }
+
+
+type alias Model =
+    { current : Maybe Project
+    , all : WebData (List Project)
+    }
+
+
+initialModel : Model
+initialModel =
+    { all = RemoteData.Loading
+    , current = Nothing
     }

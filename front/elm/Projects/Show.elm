@@ -6,7 +6,7 @@ import Html.Events exposing (onClick)
 import Html.Parser exposing (run)
 import Html.Parser.Util exposing (toVirtualDom)
 import Json.Encode exposing (string)
-import Messages exposing (..)
+import Projects.Messages exposing (Msg(..))
 import Projects.Models exposing (Link, Project)
 
 

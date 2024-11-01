@@ -3,14 +3,18 @@ module Update exposing (update)
 import Browser
 import Browser.Navigation exposing (load, pushUrl)
 import CatGifs.Commands exposing (fetchCatGif)
-import Messages exposing (..)
+import Messages exposing (Msg(..))
 import Models exposing (..)
+import Projects.Messages exposing (Msg(..))
+import Projects.Models
+import Projects.Update
 import Routing exposing (Route(..), routeParser)
+import Tuple exposing (mapBoth)
 import Url exposing (Url)
 import Url.Parser exposing (parse)
 
 
-update : Msg -> Model -> ( Model, Cmd Msg )
+update : Messages.Msg -> Model -> ( Model, Cmd Messages.Msg )
 update msg model =
     case msg of
         LinkClicked urlRequest ->
@@ -42,11 +46,6 @@ update msg model =
             , command
             )
 
-        Messages.OnFetchProjects response ->
-            ( { model | projects = response }
-            , Cmd.none
-            )
-
         Messages.OnFetchCatGif response ->
             ( { model | currentCatGif = response }
             , Cmd.none
@@ -59,19 +58,15 @@ update msg model =
             in
             ( model, command )
 
+        ProjectsMsg pMsg ->
+            Projects.Update.update pMsg model.projects
+                |> mapBoth
+                    ((\m ps -> { m | projects = ps }) model)
+                    (Cmd.map ProjectsMsg)
+
         RedirectTo path ->
             let
                 command =
                     load path
             in
             ( model, command )
-
-        ShowDescriptionOf project ->
-            ( { model | currentProject = Just project }
-            , Cmd.none
-            )
-
-        CloseDescriptionOf project ->
-            ( { model | currentProject = Nothing }
-            , Cmd.none
-            )

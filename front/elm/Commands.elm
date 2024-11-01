@@ -2,14 +2,14 @@ module Commands exposing (fetchData)
 
 import CatGifs.Commands exposing (fetchCatGif)
 import CatGifs.Models exposing (CatGifsUrl)
-import Messages exposing (Msg)
-import Projects.Commands exposing (fetchProjects)
-import Projects.Models exposing (ProjectsUrl)
+import Messages exposing (Msg(..))
+import Projects.Commands exposing (fetch)
+import Projects.Models
 
 
-fetchData : ProjectsUrl -> CatGifsUrl -> Cmd Msg
+fetchData : Projects.Models.Url -> CatGifsUrl -> Cmd Msg
 fetchData projectsUrl catGifsUrl =
     Cmd.batch
-        [ fetchProjects projectsUrl
+        [ Cmd.map ProjectsMsg (fetch projectsUrl)
         , fetchCatGif catGifsUrl
         ]
