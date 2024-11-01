@@ -12,10 +12,6 @@ import Url.Parser exposing (parse)
 
 update : Msg -> Model -> ( Model, Cmd Msg )
 update msg model =
-    let
-        ( currentSeriousProject, currentHack ) =
-            model.currentProjects
-    in
     case msg of
         LinkClicked urlRequest ->
             let
@@ -71,25 +67,11 @@ update msg model =
             ( model, command )
 
         ShowDescriptionOf project ->
-            case project.seriousness of
-                Just "hack" ->
-                    ( { model | currentProjects = ( currentSeriousProject, Just project ) }
-                    , Cmd.none
-                    )
-
-                _ ->
-                    ( { model | currentProjects = ( Just project, currentHack ) }
-                    , Cmd.none
-                    )
+            ( { model | currentProject = Just project }
+            , Cmd.none
+            )
 
         CloseDescriptionOf project ->
-            case project.seriousness of
-                Just "hack" ->
-                    ( { model | currentProjects = ( currentSeriousProject, Nothing ) }
-                    , Cmd.none
-                    )
-
-                _ ->
-                    ( { model | currentProjects = ( Nothing, currentHack ) }
-                    , Cmd.none
-                    )
+            ( { model | currentProject = Nothing }
+            , Cmd.none
+            )

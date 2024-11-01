@@ -15,7 +15,7 @@ type alias Model =
     , socialMedia : List SocialMedium
     , catGifsUrl : String
     , currentCatGif : WebData CatGif
-    , currentProjects : ( Maybe Project, Maybe Project )
+    , currentProject : Maybe Project
     , key : Browser.Navigation.Key
     , route : Maybe Route
     }
@@ -33,7 +33,7 @@ initialModel key url catGifsUrl =
     , catGifsUrl = catGifsUrl
     , currentCatGif = RemoteData.Loading
     , socialMedia = SocialMedia.Models.initialSocialMedia
-    , currentProjects = ( Nothing, Nothing )
+    , currentProject = Nothing
     , key = key
     , route = Url.Parser.parse Routing.routeParser url
     }

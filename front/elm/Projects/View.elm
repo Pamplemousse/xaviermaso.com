@@ -10,11 +10,10 @@ import Projects.List exposing (view)
 import Projects.Models exposing (Project)
 import Projects.Show exposing (view)
 import RemoteData exposing (WebData)
-import Tuple exposing (first, second)
 
 
-view : WebData (List Project) -> ( Maybe Project, Maybe Project ) -> Html Msg
-view receivedProjects currentProjects =
+view : WebData (List Project) -> Maybe Project -> Html Msg
+view receivedProjects currentProject =
     case receivedProjects of
         RemoteData.NotAsked ->
             text ""
@@ -25,7 +24,7 @@ view receivedProjects currentProjects =
         RemoteData.Success projects ->
             div []
                 [ div [ class "projects-header" ] [ text "Sometimes I like to spend time and energy working on tech-related things. Here some of the most notable, if not glorious, not-solely-professional ventures I have or had going." ]
-                , currentProjectView (first currentProjects)
+                , currentProjectView currentProject
                 , Projects.List.view projects
                 ]
 

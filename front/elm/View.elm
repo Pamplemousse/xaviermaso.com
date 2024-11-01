@@ -58,7 +58,7 @@ notFoundView =
 projectsView : Model -> Html Msg
 projectsView model =
     div []
-        [ Projects.View.view model.projects model.currentProjects
+        [ Projects.View.view model.projects model.currentProject
         ]
 
 
