@@ -1,12 +1,13 @@
-module Projects.Show exposing (formatLink, view)
+module Projects.Show exposing (view)
 
-import Html exposing (Html, a, div, h1, h3, h4, i, text)
-import Html.Attributes exposing (class, href, rel, target)
+import Html exposing (Html, div, h1, h3, h4, i, text)
+import Html.Attributes exposing (class)
 import Html.Events exposing (onClick)
 import Html.Parser exposing (run)
 import Html.Parser.Util exposing (toVirtualDom)
+import Link
 import Projects.Messages exposing (Msg(..))
-import Projects.Models exposing (Link, Project)
+import Projects.Models exposing (Project)
 
 
 view : Project -> Html Msg
@@ -38,7 +39,7 @@ view project =
                         [ class "col-md-12 textDesc" ]
                         descriptionNode
                     ]
-                , div [] (List.map formatLink project.links)
+                , div [] (project.links |> List.map (Link.view >> Html.map LinkMsg))
                 , i
                     [ class "fa fa-close fa-2x close"
                     , onClick (CloseDescriptionOf project)
@@ -46,20 +47,4 @@ view project =
                     []
                 ]
             ]
-        ]
-
-
-formatLink : Link -> Html Msg
-formatLink link =
-    let
-        link_value =
-            case link.value of
-                Nothing ->
-                    link.target
-
-                Just value ->
-                    value
-    in
-    h3 []
-        [ a [ href link.target, rel "noreferrer", target "_blank" ] [ text link_value ]
         ]

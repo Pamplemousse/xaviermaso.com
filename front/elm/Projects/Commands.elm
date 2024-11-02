@@ -3,8 +3,9 @@ module Projects.Commands exposing (fetch)
 import Http exposing (expectJson)
 import Json.Decode as Decode
 import Json.Decode.Pipeline exposing (optional, required)
+import Link
 import Projects.Messages exposing (Msg(..))
-import Projects.Models exposing (Link, Project, Url)
+import Projects.Models exposing (Project, Url)
 import RemoteData
 
 
@@ -29,12 +30,5 @@ projectDecoder =
         |> required "title" Decode.string
         |> required "dates" Decode.string
         |> required "tags" Decode.string
-        |> optional "links" (Decode.list linkDecoder) []
+        |> optional "links" (Decode.list Link.decoder) []
         |> optional "description" (Decode.map Just Decode.string) Nothing
-
-
-linkDecoder : Decode.Decoder Link
-linkDecoder =
-    Decode.succeed Link
-        |> required "target" Decode.string
-        |> optional "value" (Decode.map Just Decode.string) Nothing

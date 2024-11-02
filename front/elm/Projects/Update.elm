@@ -7,6 +7,11 @@ import Projects.Models exposing (Model)
 update : Msg -> Model -> ( Model, Cmd Msg )
 update msg model =
     case msg of
+        LinkMsg _ ->
+            ( model
+            , Cmd.none
+            )
+
         OnFetch response ->
             ( { model | all = response }
             , Cmd.none

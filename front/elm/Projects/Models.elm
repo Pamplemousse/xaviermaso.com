@@ -1,5 +1,6 @@
-module Projects.Models exposing (Id, Link, Model, Project, Url, initialModel)
+module Projects.Models exposing (Id, Model, Project, Url, initialModel)
 
+import Link
 import RemoteData exposing (WebData)
 
 
@@ -11,19 +12,13 @@ type alias Url =
     String
 
 
-type alias Link =
-    { target : String
-    , value : Maybe String
-    }
-
-
 type alias Project =
     { id : Id
     , tileContent : String
     , title : String
     , dates : String
     , tags : String
-    , links : List Link
+    , links : List Link.Model
     , description : Maybe String
     }
 
