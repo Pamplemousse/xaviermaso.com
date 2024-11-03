@@ -1,7 +1,6 @@
-module Projects.Models exposing (Id, Model, Project, Url, initialModel)
+module Projects.Models exposing (Project, Url)
 
 import Link
-import RemoteData exposing (WebData)
 
 
 type alias Id =
@@ -19,17 +18,4 @@ type alias Project =
     , tags : String
     , links : List Link.Model
     , description : Maybe String
-    }
-
-
-type alias Model =
-    { current : Maybe Project
-    , all : WebData (List Project)
-    }
-
-
-initialModel : Model
-initialModel =
-    { all = RemoteData.Loading
-    , current = Nothing
     }

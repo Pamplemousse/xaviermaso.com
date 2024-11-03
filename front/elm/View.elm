@@ -8,9 +8,10 @@ import Html.Attributes exposing (..)
 import Html.Events exposing (onClick)
 import Messages exposing (Msg(..))
 import Models exposing (Model)
-import Projects.View
+import Projects.Views
 import Routing exposing (blogPath, cvPath, meowPath, projectsPath, rootPath)
 import SocialMedia.View exposing (view)
+import TiledList
 
 
 view : Model -> Document Msg
@@ -58,7 +59,15 @@ notFoundView =
 projectsView : Model -> Html Msg
 projectsView model =
     div []
-        [ Html.map ProjectsMsg (Projects.View.view model.projects)
+        [ div [ class "list-component-header" ]
+            [ text "Sometimes I like to spend time and energy working on tech-related things. Here some of the most notable, if not glorious, not-solely-professional ventures I have or had going." ]
+        , Html.map ProjectsMsg
+            (TiledList.view
+                model.projects
+                3
+                Projects.Views.renderCurrent
+                Green
+            )
         ]
 
 

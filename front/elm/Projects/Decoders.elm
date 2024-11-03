@@ -1,24 +1,13 @@
-module Projects.Commands exposing (fetch)
+module Projects.Decoders exposing (decoder)
 
-import Http exposing (expectJson)
 import Json.Decode as Decode
 import Json.Decode.Pipeline exposing (optional, required)
 import Link
-import Projects.Messages exposing (Msg(..))
-import Projects.Models exposing (Project, Url)
-import RemoteData
+import Projects.Models exposing (Project)
 
 
-fetch : Url -> Cmd Msg
-fetch url =
-    Http.get
-        { url = url
-        , expect = expectJson (RemoteData.fromResult >> OnFetch) projectsDecoder
-        }
-
-
-projectsDecoder : Decode.Decoder (List Project)
-projectsDecoder =
+decoder : Decode.Decoder (List Project)
+decoder =
     Decode.list projectDecoder
 
 

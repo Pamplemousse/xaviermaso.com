@@ -5,9 +5,8 @@ import Browser.Navigation exposing (load, pushUrl)
 import CatGifs.Commands exposing (fetchCatGif)
 import Messages exposing (Msg(..))
 import Models exposing (..)
-import Projects.Messages exposing (Msg(..))
-import Projects.Update
 import Routing exposing (Route(..), routeParser)
+import TiledList
 import Tuple exposing (mapBoth)
 import Url
 import Url.Parser exposing (parse)
@@ -66,7 +65,7 @@ update msg model =
             ( model, command )
 
         ProjectsMsg pMsg ->
-            Projects.Update.update pMsg model.projects
+            TiledList.update pMsg model.projects
                 |> mapBoth
                     ((\m ps -> { m | projects = ps }) model)
                     (Cmd.map ProjectsMsg)

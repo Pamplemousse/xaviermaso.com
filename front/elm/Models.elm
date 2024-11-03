@@ -2,10 +2,11 @@ module Models exposing (Flags, Model, initialModel)
 
 import Browser.Navigation exposing (Key)
 import CatGifs.Models exposing (CatGif, CatGifsUrl)
-import Projects.Models
+import Projects.Models exposing (Project)
 import RemoteData exposing (WebData)
 import Routing exposing (Route)
 import SocialMedia.Models exposing (SocialMedium, initialSocialMedia)
+import TiledList
 import Url exposing (Url)
 import Url.Parser exposing (parse)
 
@@ -16,7 +17,7 @@ type alias Model =
     , currentCatGif : WebData CatGif
     , key : Key
     , route : Maybe Route
-    , projects : Projects.Models.Model
+    , projects : TiledList.Model Project
     }
 
 
@@ -33,5 +34,5 @@ initialModel key url catGifsUrl =
     , socialMedia = SocialMedia.Models.initialSocialMedia
     , key = key
     , route = Url.Parser.parse Routing.routeParser url
-    , projects = Projects.Models.initialModel
+    , projects = TiledList.initialModel
     }

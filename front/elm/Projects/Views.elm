@@ -1,17 +1,18 @@
-module Projects.Show exposing (view)
+module Projects.Views exposing (renderCurrent)
 
+import Colours exposing (Colour, toStringLight)
 import Html exposing (Html, div, h1, h3, h4, i, text)
 import Html.Attributes exposing (class)
 import Html.Events exposing (onClick)
-import Html.Parser exposing (run)
-import Html.Parser.Util exposing (toVirtualDom)
+import Html.Parser
+import Html.Parser.Util
 import Link
-import Projects.Messages exposing (Msg(..))
 import Projects.Models exposing (Project)
+import TiledList exposing (Msg(..))
 
 
-view : Project -> Html Msg
-view project =
+renderCurrent : Colour -> Project -> Html (Msg Project)
+renderCurrent colour project =
     let
         descriptionNode =
             case project.description of
@@ -28,7 +29,7 @@ view project =
     in
     div [ class "row" ]
         [ div [ class "col-md-12" ]
-            [ div [ class "project-description lightGreen" ]
+            [ div [ class ("list-component-description " ++ toStringLight colour) ]
                 [ h1 [] [ text project.title ]
                 , h3
                     [ class "date" ]

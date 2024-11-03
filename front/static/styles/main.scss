@@ -69,14 +69,14 @@ a:hover {
   border : 1px solid grey;
 }
 
-.tile-project {
+.list-component-tile {
   width         : 100%;
   font-size     : 2em;
   padding       : 1.3em 0em;
   margin-bottom : 25px;
 }
 
-.tile-project:hover {
+.list-component-tile:hover {
   border : 1px solid grey;
 }
 
@@ -87,16 +87,16 @@ a:hover {
   padding     : 10px 20px;
 }
 
-.projects-header {
+.list-component-header {
   font-size     : 1.5em;
   margin-bottom : 25px;
 }
 
-#project-description {
+#list-component-description {
   display : none;
 }
 
-.project-description {
+.list-component-description {
   padding       : 10px;
   margin-bottom : 25px;
   position      : relative;
