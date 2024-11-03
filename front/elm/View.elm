@@ -2,6 +2,7 @@ module View exposing (view)
 
 import Browser exposing (Document)
 import CatGifs.View exposing (..)
+import Colours exposing (Colour(..))
 import Html exposing (Html, a, br, button, div, h6, object, text)
 import Html.Attributes exposing (..)
 import Html.Events exposing (onClick)
@@ -77,7 +78,7 @@ cvView =
             , attribute "data" "xaviermaso.pdf"
             , style "height" "80em"
             ]
-            [ div [ class "message lightOrange" ]
+            [ div [ class ("message " ++ Colours.toStringLight Orange) ]
                 [ br [] []
                 , div [] [ text "Oops !" ]
                 , br [] []
@@ -95,13 +96,13 @@ mainView : Html Msg
 mainView =
     div [ class "row" ]
         [ div [ class "col-md-4" ]
-            [ button [ class "tile blue", onClick (RedirectTo blogPath) ] [ text "Blog" ]
+            [ button [ class ("tile " ++ Colours.toString Blue), onClick (RedirectTo blogPath) ] [ text "Blog" ]
             ]
         , div [ class "col-md-4" ]
-            [ button [ class "tile green", onClick (NavigateTo projectsPath) ] [ text "Projects" ]
+            [ button [ class ("tile " ++ Colours.toString Green), onClick (NavigateTo projectsPath) ] [ text "Projects" ]
             ]
         , div [ class "col-md-4" ]
-            [ button [ class "tile orange", onClick (NavigateTo cvPath) ] [ text "CV" ]
+            [ button [ class ("tile " ++ Colours.toString Orange), onClick (NavigateTo cvPath) ] [ text "CV" ]
             ]
         ]
 

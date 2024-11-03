@@ -1,5 +1,6 @@
 module Projects.List exposing (projectTile, view)
 
+import Colours exposing (Colour(..))
 import Html exposing (..)
 import Html.Attributes exposing (class)
 import Html.Events exposing (onClick)
@@ -17,10 +18,10 @@ projectTile index project =
     let
         color =
             if modBy 2 index == 0 then
-                "green"
+                Colours.toString Green
 
             else
-                "lightGreen"
+                Colours.toStringLight Green
     in
     div [ class "col-md-4", onClick (ShowDescriptionOf project) ]
         [ button [ class ("tile-project " ++ color) ] [ text project.tileContent ]
