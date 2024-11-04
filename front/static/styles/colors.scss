@@ -1,39 +1,21 @@
-.green {
-  border           : 1px solid #93C47D;
-  background-color : #93C47D;
+$colors: (
+  "blue": #9FC4EC,
+  "lightBlue": #C9DAF8,
+
+  "green": #93C47D,
+  "lightGreen": #B6D7A8,
+
+  "orange": #F6B26B,
+  "lightOrange": #F9CB9C,
+);
+
+@mixin colored($color) {
+  border           : 1px solid $color;
+  background-color : $color;
 }
 
-.lightGreen {
-  border           : 1px solid #B6D7A8;
-  background-color : #B6D7A8;
-}
-
-.orange {
-  border           : 1px solid #F6B26B;
-  background-color : #F6B26B;
-}
-
-.lightOrange {
-  border           : 1px solid #F9CB9C;
-  background-color : #F9CB9C;
-}
-
-.blue {
-  border           : 1px solid #9FC4EC;
-  background-color : #9FC4EC;
-}
-
-.lightBlue {
-  border           : 1px solid #C9DAF8;
-  background-color : #C9DAF8;
-}
-
-.violet {
-  border           : 1px solid #8E7CC3;
-  background-color : #8E7CC3;
-}
-
-.lightViolet {
-  border           : 1px solid #B4A7D6;
-  background-color : #B4A7D6;
+@each $name, $color in $colors {
+  .#{$name} {
+    @include colored($color)
+  }
 }
