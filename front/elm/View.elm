@@ -95,16 +95,17 @@ cvView =
 mainView : Html Msg
 mainView =
     div [ class "row" ]
-        [ div [ class "col-md-4" ]
-            [ button [ class ("tile " ++ Colours.toString Blue), onClick (RedirectTo blogPath) ] [ text "Blog" ]
+        (List.map
+            (\( colour, action, text_ ) ->
+                div [ class "col-md-4" ]
+                    [ button [ class ("tile " ++ Colours.toString colour), onClick action ] [ text text_ ]
+                    ]
+            )
+            [ ( Blue, RedirectTo blogPath, "Blog" )
+            , ( Green, NavigateTo projectsPath, "Projects" )
+            , ( Orange, NavigateTo cvPath, "CV" )
             ]
-        , div [ class "col-md-4" ]
-            [ button [ class ("tile " ++ Colours.toString Green), onClick (NavigateTo projectsPath) ] [ text "Projects" ]
-            ]
-        , div [ class "col-md-4" ]
-            [ button [ class ("tile " ++ Colours.toString Orange), onClick (NavigateTo cvPath) ] [ text "CV" ]
-            ]
-        ]
+        )
 
 
 nameLine : Html Msg
