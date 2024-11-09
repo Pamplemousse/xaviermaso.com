@@ -1,7 +1,5 @@
 # xavier maso's website
 
-![Known Vulnerabilities](https://snyk.io/test/github/Pamplemousse/xaviermaso.com/badge.svg?targetFile=package.json)
-
 * powered by [expressjs](http://expressjs.com/) and [elm](http://elm-lang.org/)
 * running live at [xaviermaso.com](https://www.xaviermaso.com/)
 
