@@ -14,7 +14,6 @@ type alias Url =
 
 type alias Project =
     { id : Id
-    , tileContent : String
     , title : String
     , dates : String
     , tags : String

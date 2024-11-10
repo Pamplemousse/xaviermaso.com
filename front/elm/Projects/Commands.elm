@@ -26,7 +26,6 @@ projectDecoder : Decode.Decoder Project
 projectDecoder =
     Decode.succeed Project
         |> required "id" Decode.int
-        |> required "tileContent" Decode.string
         |> required "title" Decode.string
         |> required "dates" Decode.string
         |> required "tags" Decode.string

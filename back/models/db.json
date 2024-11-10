@@ -1,14 +1,12 @@
 {
   "projects": [{
     "id": 0,
-    "tileContent": "personal stack",
     "title": "Personal Stack",
     "dates": "2014 - today",
     "tags": "devops, nixos, docker, ansible",
     "description": "Owner and co-owner of servers used to self-host services such as <a target='_blank' href='https://selfoss.aditu.de/'>Selfoss</a>, <a target='_blank' href='https://cryptpad.org/'>Cryptpad</a>, <a target='_blank' href='https://grafana.com/'>Grafana</a>, VPNs, and websites.<br/>Mostly running on <a target='_blank' href='https://nixos.org'>NixOS</a> machines; Some legacy Debian whose configuration has been automated with Ansible are still hanging around."
   }, {
    "id": 1,
-   "tileContent": "alfred",
    "title": "Alfred",
    "dates": "july 2023 (rebirth) - today",
    "tags": "rust, matrix, nix",
@@ -18,7 +16,6 @@
    "description": "My very own butler.<br/>Implemented in Rust, reachable over <a target='_blank' href='https://matrix.org'>Matrix</a>, packaged for <a target='_blank' href='https://nixos.org'>Nix and NixOS</a>. Part of the data it collects eventually finds its way to my own <a target='_blank' href='https://grafana.com/'>Grafana</a> instance."
   }, {
     "id": 2,
-    "tileContent": "xaviermaso.com",
     "title": "xaviermaso.com",
     "dates": "2014 - today",
     "tags": "nodejs, elm, front-end development, devops",
@@ -28,21 +25,18 @@
     "description": "The gorgeous website you are looking at right now. With 100% AI-free content.<br/>Front-end written in <a target='_blank' href='https://elm-lang.org/'>Elm</a>, back-end powered by ExpressJS."
   }, {
     "id": 3,
-    "tileContent": "nix / nixos",
-    "title": "Nix/NixOS Contributions",
+    "title": "Nix/NixOS",
     "dates": "july 2019 - today",
     "tags": "opensource, development, linux",
     "description": "<a target='_blank' href='https://nixos.org'>Nix/NixOS</a> user, I have been contributing to its ecosystem in the last few years by: packaging applications, writing new or improving existing modules, participating to its forums, etc."
   }, {
     "id": 4,
-    "tileContent": "fuzzing nix",
     "title": "Fuzzing Nix",
     "dates": "june 2021 - september 2021",
     "tags": "opensource, security",
     "description": "During a fellowship sponsored by <a target='_blank' href='https://www.tweag.io/'>Tweag</a>, I had the opportunity to do research and development on fuzzing the <a target='_blank' href='https://nixos.org'>Nix package manager</a>. Reports can be found on the community Discourse: <a target='_blank' href='https://discourse.nixos.org/t/tweag-fellowship-fuzzing-nix-0'>Update #0</a>, <a target='_blank' href='https://discourse.nixos.org/t/tweag-fellowship-fuzzing-nix-1'>Update #1</a>, <a target='_blank' href='https://discourse.nixos.org/t/tweag-fellowship-fuzzing-nix-2'>Update #2</a>, <a target='_blank' href='https://discourse.nixos.org/t/tweag-fellowship-fuzzing-nix-3'>Update #3</a>, <a target='_blank' href='https://discourse.nixos.org/t/tweag-fellowship-fuzzing-nix-4'>Update #4</a>."
   }, {
     "id": 5,
-    "tileContent": "owasp-zap",
     "title": "OWASP ZAP",
     "dates": "may - august 2018",
     "tags": "web security, javascript, R&D",
