@@ -40,8 +40,16 @@ update msg model =
 
                         _ ->
                             Cmd.none
+
+                voidCurrent m =
+                    { m | current = Nothing }
+
+                voidedModel =
+                    { model
+                        | projects = voidCurrent model.projects
+                    }
             in
-            ( { model | route = route }
+            ( { voidedModel | route = route }
             , command
             )
 
