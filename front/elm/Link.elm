@@ -3,8 +3,8 @@ module Link exposing (Model, Msg(..), decoder, view)
 {-| This represent a link to an external resource used as a reference.
 -}
 
-import Html exposing (..)
-import Html.Attributes exposing (href, rel, target)
+import Html exposing (Html, a, text)
+import Html.Attributes exposing (class, href, rel, target)
 import Json.Decode as Decode
 import Json.Decode.Pipeline exposing (optional, required)
 
@@ -37,6 +37,4 @@ view link =
                 Just value ->
                     value
     in
-    h3 []
-        [ a [ href link.target, rel "noreferrer", target "_blank" ] [ text link_value ]
-        ]
+    a [ href link.target, rel "noreferrer", target "_blank", class "link" ] [ text link_value ]

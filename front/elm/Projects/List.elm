@@ -24,5 +24,5 @@ projectTile index project =
                 Colours.toStringLight Green
     in
     div [ class "col-md-4", onClick (ShowDescriptionOf project) ]
-        [ button [ class ("tile-project " ++ color) ] [ (project.title |> String.toLower |> text) ]
+        [ button [ class ("tile-project " ++ color) ] [ project.title |> String.toLower |> text ]
         ]
