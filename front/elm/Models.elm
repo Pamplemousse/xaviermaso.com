@@ -1,7 +1,7 @@
 module Models exposing (Flags, Model, initialModel)
 
 import Browser.Navigation exposing (Key)
-import CatGifs.Models exposing (CatGif, CatGifsUrl)
+import CatGifs.Models exposing (CatGif)
 import Projects.Models exposing (Project)
 import RemoteData exposing (WebData)
 import Routing exposing (Route)
@@ -13,7 +13,7 @@ import Url.Parser exposing (parse)
 
 type alias Model =
     { socialMedia : List SocialMedium
-    , catGifsUrl : String
+    , catGifsUrl : Url
     , currentCatGif : WebData CatGif
     , key : Key
     , route : Maybe Route
@@ -22,12 +22,12 @@ type alias Model =
 
 
 type alias Flags =
-    { projectsUrl : Projects.Models.Url
-    , catGifsUrl : CatGifsUrl
+    { projectsUrl : String
+    , catGifsUrl : String
     }
 
 
-initialModel : Key -> Url -> String -> Model
+initialModel : Key -> Url -> Url -> Model
 initialModel key url catGifsUrl =
     { catGifsUrl = catGifsUrl
     , currentCatGif = RemoteData.Loading

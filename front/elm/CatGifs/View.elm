@@ -6,6 +6,7 @@ import Html.Attributes exposing (class, src)
 import HttpErrorWrapper exposing (buildErrorMessage)
 import Messages exposing (Msg)
 import RemoteData exposing (WebData)
+import Url
 
 
 view : WebData CatGif -> Html Msg
@@ -20,7 +21,7 @@ view currentCatGif =
         RemoteData.Success catGif ->
             div [ class "row" ]
                 [ div [ class "col-md-4 col-md-offset-4" ]
-                    [ img [ src catGif.gifUrl ] []
+                    [ img [ src (catGif.gifUrl |> Url.toString) ] []
                     ]
                 ]
 

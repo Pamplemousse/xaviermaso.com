@@ -13,6 +13,7 @@ import HttpErrorWrapper exposing (buildErrorMessage)
 import Json.Decode as Decode
 import Link
 import RemoteData exposing (WebData)
+import Url exposing (Url)
 
 
 type alias Listable a =
@@ -34,10 +35,6 @@ type alias Model a =
     }
 
 
-type alias Url =
-    String
-
-
 initialModel : Model a
 initialModel =
     { all = RemoteData.Loading
@@ -48,7 +45,7 @@ initialModel =
 fetch : Decode.Decoder (List (Listable a)) -> Url -> Cmd (Msg (Listable a))
 fetch decoder url =
     Http.get
-        { url = url
+        { url = url |> Url.toString
         , expect = expectJson (RemoteData.fromResult >> OnFetch) decoder
         }
 

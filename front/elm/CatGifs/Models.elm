@@ -1,12 +1,18 @@
-module CatGifs.Models exposing (..)
+module CatGifs.Models exposing (CatGif, cat500, catGifDefaultUrl)
 
--- URL of the source providing GIF URLs.
+import Url exposing (Protocol(..), Url)
 
 
-type alias CatGifsUrl =
-    String
+cat500 : Url
+cat500 =
+    Url Https "http.cat" Nothing "images/500.jpg" Nothing Nothing
+
+
+catGifDefaultUrl : Url
+catGifDefaultUrl =
+    Url Https "api.giphy.com" Nothing "v1/gifs/random" (Just "tag=cat") Nothing
 
 
 type alias CatGif =
-    { gifUrl : String -- URL of the GIF resource on the internet.
+    { gifUrl : Url -- URL of the GIF resource on the internet.
     }
