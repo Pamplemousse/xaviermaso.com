@@ -9,6 +9,7 @@ import Json.Decode exposing (decodeString)
 import Messages exposing (Msg(..))
 import Models exposing (Flags, Model, initialModel)
 import Projects.Models exposing (projectsDefaultUrl)
+import Talks.Models exposing (talksDefaultUrl)
 import Update exposing (update)
 import Url exposing (Protocol(..), Url)
 import View exposing (view)
@@ -29,9 +30,12 @@ initialState flags url key =
 
         projectsUrl =
             flags.projectsUrl |> toUrl projectsDefaultUrl
+
+        talksUrl =
+            flags.talksUrl |> toUrl talksDefaultUrl
     in
     ( initialModel key url catGifUrl
-    , fetchData projectsUrl catGifUrl
+    , fetchData projectsUrl talksUrl catGifUrl
     )
 
 

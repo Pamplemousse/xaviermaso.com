@@ -7,8 +7,10 @@
 @import '~bootstrap/scss/utilities';
 
 @import '~bootstrap/scss/reboot';
+@import '~bootstrap/scss/root';
 @import '~bootstrap/scss/containers';
 @import '~bootstrap/scss/grid';
+@import "~bootstrap/scss/list-group";
 
 @import '~bootstrap/scss/utilities/api';
 
@@ -130,4 +132,8 @@ a:hover {
   font-size   : 1.6em;
   font-weight : 500;
   line-height : 1.2;
+}
+
+.list-group {
+  --bs-list-group-bg: inherit;
 }

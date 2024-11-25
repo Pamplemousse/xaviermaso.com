@@ -9,8 +9,9 @@ import Html.Events exposing (onClick)
 import Messages exposing (Msg(..))
 import Models exposing (Model)
 import Projects.Views
-import Routing exposing (blogPath, cvPath, meowPath, projectsPath, rootPath)
+import Routing exposing (blogPath, cvPath, meowPath, projectsPath, rootPath, talksPath)
 import SocialMedia.View exposing (view)
+import Talks.Views
 import TiledList
 
 
@@ -41,6 +42,11 @@ view model =
                 Routing.ProjectsRoute ->
                     { title = "XM | Projects"
                     , body = [ layoutify (projectsView model) ]
+                    }
+
+                Routing.TalksRoute ->
+                    { title = "XM | Talks"
+                    , body = [ layoutify (talksView model) ]
                     }
 
         Nothing ->
@@ -78,6 +84,21 @@ meowView model =
         ]
 
 
+talksView : Model -> Html Msg
+talksView model =
+    div []
+        [ div [ class "list-component-header" ]
+            [ text "As a firm believer in education for everyone, at all times, I sometimes give presentations where I share knowledge and communicate feedback about things I have explored." ]
+        , Html.map TalksMsg
+            (TiledList.view
+                model.talks
+                2
+                Talks.Views.renderCurrent
+                Magenta
+            )
+        ]
+
+
 cvView : Html Msg
 cvView =
     div [ class "row" ]
@@ -106,13 +127,14 @@ mainView =
     div [ class "row" ]
         (List.map
             (\( colour, action, text_ ) ->
-                div [ class "col-md-4" ]
+                div [ class "col-md-3" ]
                     [ button [ class ("tile " ++ Colours.toString colour), onClick action ] [ text text_ ]
                     ]
             )
             [ ( Blue, RedirectTo blogPath, "Blog" )
             , ( Green, NavigateTo projectsPath, "Projects" )
             , ( Orange, NavigateTo cvPath, "CV" )
+            , ( Magenta, NavigateTo talksPath, "Talks" )
             ]
         )
 

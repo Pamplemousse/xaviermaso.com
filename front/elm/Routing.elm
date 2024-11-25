@@ -1,4 +1,4 @@
-module Routing exposing (Route(..), blogPath, cvPath, meowPath, projectsPath, rootPath, routeParser)
+module Routing exposing (Route(..), blogPath, cvPath, meowPath, projectsPath, rootPath, routeParser, talksPath)
 
 import Url.Parser exposing (Parser, map, oneOf, s, top)
 
@@ -8,6 +8,7 @@ type Route
     | CVRoute
     | MeowRoute
     | ProjectsRoute
+    | TalksRoute
 
 
 routeParser : Parser (Route -> a) a
@@ -17,6 +18,7 @@ routeParser =
         , map CVRoute (s cvPath)
         , map MeowRoute (s meowPath)
         , map ProjectsRoute (s projectsPath)
+        , map TalksRoute (s talksPath)
         ]
 
 
@@ -43,3 +45,8 @@ projectsPath =
 rootPath : String
 rootPath =
     "/"
+
+
+talksPath : String
+talksPath =
+    "talks"

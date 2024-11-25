@@ -4,6 +4,7 @@ import Browser exposing (UrlRequest)
 import CatGifs.Models exposing (CatGif)
 import Projects.Models exposing (Project)
 import RemoteData exposing (WebData)
+import Talks.Models exposing (Talk)
 import TiledList
 import Url exposing (Url)
 
@@ -15,3 +16,4 @@ type Msg
     | NavigateTo String
     | RedirectTo String
     | ProjectsMsg (TiledList.Msg Project)
+    | TalksMsg (TiledList.Msg Talk)
