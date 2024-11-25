@@ -4,6 +4,7 @@ module Colours exposing (Colour(..), toString, toStringLight)
 type Colour
     = Blue
     | Green
+    | Magenta
     | Orange
 
 
@@ -15,6 +16,9 @@ toString c =
 
         Green ->
             "green"
+
+        Magenta ->
+            "magenta"
 
         Orange ->
             "orange"
@@ -28,6 +32,9 @@ toStringLight c =
 
         Green ->
             "lightGreen"
+
+        Magenta ->
+            "lightMagenta"
 
         Orange ->
             "lightOrange"
