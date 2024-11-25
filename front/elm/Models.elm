@@ -6,6 +6,7 @@ import Projects.Models exposing (Project)
 import RemoteData exposing (WebData)
 import Routing exposing (Route)
 import SocialMedia.Models exposing (SocialMedium, initialSocialMedia)
+import Talks.Models exposing (Talk)
 import TiledList
 import Url exposing (Url)
 import Url.Parser exposing (parse)
@@ -18,11 +19,13 @@ type alias Model =
     , key : Key
     , route : Maybe Route
     , projects : TiledList.Model Project
+    , talks : TiledList.Model Talk
     }
 
 
 type alias Flags =
     { projectsUrl : String
+    , talksUrl : String
     , catGifsUrl : String
     }
 
@@ -35,4 +38,5 @@ initialModel key url catGifsUrl =
     , key = key
     , route = Url.Parser.parse Routing.routeParser url
     , projects = TiledList.initialModel
+    , talks = TiledList.initialModel
     }

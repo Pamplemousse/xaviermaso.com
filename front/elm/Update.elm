@@ -46,6 +46,7 @@ update msg model =
                 voidedModel =
                     { model
                         | projects = voidCurrent model.projects
+                        , talks = voidCurrent model.talks
                     }
             in
             ( { voidedModel | route = route }
@@ -69,6 +70,12 @@ update msg model =
                 |> mapBoth
                     ((\m ps -> { m | projects = ps }) model)
                     (Cmd.map ProjectsMsg)
+
+        TalksMsg tMsg ->
+            TiledList.update tMsg model.talks
+                |> mapBoth
+                    ((\m ts -> { m | talks = ts }) model)
+                    (Cmd.map TalksMsg)
 
         RedirectTo path ->
             let

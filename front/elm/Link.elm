@@ -1,4 +1,4 @@
-module Link exposing (Model, Msg(..), decoder, view)
+module Link exposing (Model, Msg(..), decoder, decoderWithDefaultValue, view)
 
 {-| This represent a link to an external resource used as a reference.
 -}
@@ -24,6 +24,11 @@ decoder =
     Decode.succeed Model
         |> required "target" Decode.string
         |> optional "value" (Decode.map Just Decode.string) Nothing
+
+
+decoderWithDefaultValue : String -> Decode.Decoder Model
+decoderWithDefaultValue defaultValue =
+    Decode.map (\slides -> { slides | value = Just defaultValue }) decoder
 
 
 view : Model -> Html Msg

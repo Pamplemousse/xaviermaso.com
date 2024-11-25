@@ -13,8 +13,10 @@
             "elm/http": "2.0.0",
             "elm/json": "1.1.3",
             "elm/url": "1.0.0",
+            "elm-community/html-extra": "3.4.0",
             "elm-explorations/markdown": "1.0.0",
             "hecrj/html-parser": "2.3.4",
+            "justinmimbs/date": "4.1.0",
             "krisajenkins/remotedata": "6.0.1"
         },
         "indirect": {
