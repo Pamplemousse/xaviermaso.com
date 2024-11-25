@@ -21,6 +21,7 @@ if (process.env.NODE_ENV !== 'production') {
 
 app.use('/api/meow', require('./routes/meow'))
 app.use('/api/projects', require('./routes/projects'))
+app.use('/api/talks', require('./routes/talks'))
 app.use('*', require('./routes/index'))
 
 // catch 404 and forwarding to error handler

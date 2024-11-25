@@ -156,23 +156,25 @@ if (TARGET_ENV === 'production') {
 
     plugins: [
       new CopyWebpackPlugin({
-        patterns: [
+        patterns: Array.prototype.concat([
           {
             from: path.join(__dirname, 'front', 'static', 'img'),
             to: path.join('static', 'img')
           },
           {
-            from: path.join(__dirname, 'front', 'static', 'documents', 'xaviermaso.pdf'),
-            to: 'xaviermaso.pdf'
-          },
-          {
-            from: path.join(__dirname, 'front', 'static', 'documents', 'internship_report_2018.pdf'),
-            to: 'internship_report_2018.pdf'
-          },
-          {
             from: path.join(__dirname, 'front', 'static', 'img', 'favicon.ico')
           }
-        ]
+        ], [
+          'atbdx2024_slides.pdf',
+          'internship_report_2018.pdf',
+          'xaviermaso.pdf'
+        ].map((f) => {
+          return {
+            from: path.join(__dirname, 'front', 'static', 'documents', f),
+            to: f
+          }
+        })
+        )
       }),
 
       // extract CSS into a separate file

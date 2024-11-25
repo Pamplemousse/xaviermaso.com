@@ -21,5 +21,13 @@ module.exports = (function () {
     }
   }
 
-  return { projects }
+  var talks = {
+    all: function () {
+      return parsedData.then(function (data) {
+        return data.talks
+      })
+    }
+  }
+
+  return { projects, talks }
 })()
