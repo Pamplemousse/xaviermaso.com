@@ -8,9 +8,11 @@ import Html.Attributes exposing (..)
 import Html.Events exposing (onClick)
 import Messages exposing (Msg(..))
 import Models exposing (Model)
+import Projects.Routing
 import Projects.Views
-import Routing exposing (blogPath, cvPath, meowPath, projectsPath, rootPath, talksPath)
-import SocialMedia.View exposing (view)
+import Routing exposing (blogPath, cvPath, meowPath, rootPath)
+import SocialMedia.View
+import Talks.Routing
 import Talks.Views
 import TiledList
 
@@ -132,9 +134,9 @@ mainView =
                     ]
             )
             [ ( Blue, RedirectTo blogPath, "Blog" )
-            , ( Green, NavigateTo projectsPath, "Projects" )
+            , ( Green, NavigateTo Projects.Routing.path, "Projects" )
             , ( Orange, NavigateTo cvPath, "CV" )
-            , ( Magenta, NavigateTo talksPath, "Talks" )
+            , ( Magenta, NavigateTo Talks.Routing.path, "Talks" )
             ]
         )
 
