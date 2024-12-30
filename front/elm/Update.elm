@@ -9,7 +9,7 @@ import Routing exposing (Route(..), routeParser)
 import TiledList
 import Tuple exposing (mapBoth)
 import Url
-import Url.Parser exposing (parse)
+import Url.Parser
 
 
 update : Messages.Msg -> Model -> ( Model, Cmd Messages.Msg )
@@ -30,40 +30,34 @@ update msg model =
         UrlChanged url ->
             let
                 route =
-                    Url.Parser.parse Routing.routeParser url
+                    Url.Parser.parse routeParser url
 
-                command =
-                    case route of
-                        Just MeowRoute ->
-                            fetchCatGif model.catGifsUrl
-
-                        _ ->
-                            Cmd.none
-
-                voidCurrent m =
-                    { m | idCurrent = Nothing }
-
-                voidedModel =
-                    { model
-                        | projects = voidCurrent model.projects
-                        , talks = voidCurrent model.talks
-                    }
+                newModel =
+                    { model | route = route }
             in
-            ( { voidedModel | route = route }
-            , command
-            )
+            case route of
+                Just MeowRoute ->
+                    ( newModel
+                    , fetchCatGif model.catGifsUrl
+                    )
+
+                Just (ProjectsRoute r) ->
+                    TiledList.update (TiledList.UrlChanged r) model.projects
+                        |> mapBoth (\ps -> { newModel | projects = ps }) (Cmd.map ProjectsMsg)
+
+                Just (TalksRoute r) ->
+                    TiledList.update (TiledList.UrlChanged r) model.talks
+                        |> mapBoth (\ts -> { newModel | talks = ts }) (Cmd.map TalksMsg)
+
+                _ ->
+                    ( newModel
+                    , Cmd.none
+                    )
 
         Messages.OnFetchCatGif response ->
             ( { model | currentCatGif = response }
             , Cmd.none
             )
-
-        NavigateTo path ->
-            let
-                command =
-                    pushUrl model.key path
-            in
-            ( model, command )
 
         ProjectsMsg pMsg ->
             TiledList.update pMsg model.projects

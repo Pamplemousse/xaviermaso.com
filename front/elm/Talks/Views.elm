@@ -2,13 +2,13 @@ module Talks.Views exposing (renderCurrent)
 
 import Colours exposing (Colour, toStringLight)
 import Date exposing (format, year)
-import Html exposing (Html, br, div, h1, h3, i, li, span, text, ul)
-import Html.Attributes exposing (class)
-import Html.Events exposing (onClick)
+import Html exposing (Html, a, br, div, h1, h3, i, li, span, text, ul)
+import Html.Attributes exposing (class, href)
 import Html.Extra exposing (viewMaybe)
 import Lang
 import Link
 import Talks.Models exposing (Conference, Talk)
+import Talks.Routing exposing (path)
 import TiledList exposing (Msg(..))
 
 
@@ -53,11 +53,10 @@ renderCurrent colour talk =
                         [ text talk.description ]
                     ]
                 , renderConferences talk.conferences
-                , i
-                    [ class "fa fa-close fa-2x close"
-                    , onClick CloseDescriptionOfCurrent
+                , a [ href ("/" ++ path) ]
+                    [ i [ class "fa fa-close fa-2x close" ]
+                        []
                     ]
-                    []
                 ]
             ]
         ]
