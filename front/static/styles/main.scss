@@ -21,7 +21,7 @@ $fa-font-path: "~fork-awesome/fonts";
 
 @import './colors.scss';
 
-html, body, button {
+html, body {
   background-color : #F9F9F9;
   font-family      : Roboto;
   font-weight      : 300;
@@ -76,23 +76,18 @@ a:hover:not(.tile, .section, .name) {
 }
 
 .tile {
-  width     : 100%;
   font-size : 3em;
-  padding   : 1.3em 0em;
 }
 
 .list-component-tile {
-  width         : 100%;
   font-size     : 2em;
-  padding       : 1.3em 0em;
   margin-bottom : 25px;
 }
 
-.list-component-tile:hover {
-  border : 1px solid grey;
-}
+.tile, .list-component-tile {
+  padding: 1.3em 0em;
+  width: 100%;
 
-.tile {
   @at-root {
     a#{&} {
       text-decoration: none !important;

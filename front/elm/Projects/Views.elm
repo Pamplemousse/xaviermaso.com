@@ -1,13 +1,13 @@
 module Projects.Views exposing (renderCurrent)
 
 import Colours exposing (Colour, toStringLight)
-import Html exposing (Html, div, h1, h3, h4, i, text)
-import Html.Attributes exposing (class)
-import Html.Events exposing (onClick)
+import Html exposing (Html, a, div, h1, h3, h4, i, text)
+import Html.Attributes exposing (class, href)
 import Html.Parser
 import Html.Parser.Util
 import Link
 import Projects.Models exposing (Project)
+import Projects.Routing exposing (path)
 import TiledList exposing (Msg(..))
 
 
@@ -41,11 +41,10 @@ renderCurrent colour project =
                         descriptionNode
                     ]
                 , div [] (project.links |> List.map (Link.view >> Html.map LinkMsg))
-                , i
-                    [ class "fa fa-close fa-2x close"
-                    , onClick CloseDescriptionOfCurrent
+                , a [ href ("/" ++ path) ]
+                    [ i [ class "fa fa-close fa-2x close" ]
+                        []
                     ]
-                    []
                 ]
             ]
         ]

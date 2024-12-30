@@ -40,12 +40,12 @@ view model =
                     , body = [ layoutify (meowView model) ]
                     }
 
-                Routing.ProjectsRoute ->
+                Routing.ProjectsRoute _ ->
                     { title = "XM | Projects"
                     , body = [ layoutify (projectsView model) ]
                     }
 
-                Routing.TalksRoute ->
+                Routing.TalksRoute _ ->
                     { title = "XM | Talks"
                     , body = [ layoutify (talksView model) ]
                     }
@@ -73,6 +73,7 @@ projectsView model =
                 model.projects
                 3
                 Projects.Views.renderCurrent
+                Projects.Routing.path
                 Green
             )
         ]
@@ -95,6 +96,7 @@ talksView model =
                 model.talks
                 2
                 Talks.Views.renderCurrent
+                Talks.Routing.path
                 Magenta
             )
         ]

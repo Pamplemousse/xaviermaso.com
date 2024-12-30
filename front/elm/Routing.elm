@@ -2,6 +2,7 @@ module Routing exposing (Route(..), blogPath, cvPath, meowPath, rootPath, routeP
 
 import Projects.Routing
 import Talks.Routing
+import TiledList
 import Url.Parser exposing (Parser, map, oneOf, s, top)
 
 
@@ -9,8 +10,8 @@ type Route
     = MainRoute
     | CVRoute
     | MeowRoute
-    | ProjectsRoute
-    | TalksRoute
+    | ProjectsRoute TiledList.Route
+    | TalksRoute TiledList.Route
 
 
 routeParser : Parser (Route -> a) a
@@ -19,8 +20,8 @@ routeParser =
         [ map MainRoute top
         , map CVRoute (s cvPath)
         , map MeowRoute (s meowPath)
-        , map ProjectsRoute (s Projects.Routing.path)
-        , map TalksRoute (s Talks.Routing.path)
+        , map ProjectsRoute (TiledList.parser Projects.Routing.path)
+        , map TalksRoute (TiledList.parser Talks.Routing.path)
         ]
 
 

@@ -13,6 +13,5 @@ type Msg
     = LinkClicked UrlRequest
     | UrlChanged Url
     | OnFetchCatGif (WebData CatGif)
-    | NavigateTo String
     | ProjectsMsg (TiledList.Msg Project)
     | TalksMsg (TiledList.Msg Talk)
