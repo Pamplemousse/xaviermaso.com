@@ -76,10 +76,3 @@ update msg model =
                 |> mapBoth
                     ((\m ts -> { m | talks = ts }) model)
                     (Cmd.map TalksMsg)
-
-        RedirectTo path ->
-            let
-                command =
-                    load path
-            in
-            ( model, command )

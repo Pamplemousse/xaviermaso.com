@@ -32,8 +32,17 @@ a {
   color : #333333;
 }
 
-a:hover {
+a:hover:not(.tile, .section, .name) {
   color : black;
+}
+
+@mixin unstyled-a() {
+  @at-root {
+    a#{&} {
+      text-decoration: none !important;
+      display: inline-block;
+    }
+  }
 }
 
 .top-line {
@@ -46,8 +55,11 @@ a:hover {
 }
 
 .section {
-  text-align  : right;
-  font-style  : italic;
+  @include unstyled-a;
+
+  text-align: right;
+  font-style: italic;
+  width: 100%;
 }
 
 .social-icon {
@@ -55,6 +67,8 @@ a:hover {
 }
 
 .name {
+  @include unstyled-a;
+
   font-size   : 9em;
   line-height : 1em;
   margin-top  : 7%;
@@ -67,10 +81,6 @@ a:hover {
   padding   : 1.3em 0em;
 }
 
-.tile:hover {
-  border : 1px solid grey;
-}
-
 .list-component-tile {
   width         : 100%;
   font-size     : 2em;
@@ -80,6 +90,24 @@ a:hover {
 
 .list-component-tile:hover {
   border : 1px solid grey;
+}
+
+.tile {
+  @at-root {
+    a#{&} {
+      text-decoration: none !important;
+      display: inline-block;
+      text-align: center;
+
+      &:hover {
+        color: parent(color);
+      }
+    }
+  }
+
+  &:hover {
+    border: 1px solid grey;
+  }
 }
 
 .message {

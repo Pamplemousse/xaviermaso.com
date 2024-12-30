@@ -1,11 +1,10 @@
 module View exposing (view)
 
-import Browser exposing (Document)
+import Browser exposing (Document, UrlRequest(..))
 import CatGifs.View exposing (..)
 import Colours exposing (Colour(..))
-import Html exposing (Html, a, br, button, div, h6, object, text)
+import Html exposing (Html, a, br, div, object, text)
 import Html.Attributes exposing (..)
-import Html.Events exposing (onClick)
 import Messages exposing (Msg(..))
 import Models exposing (Model)
 import Projects.Routing
@@ -128,15 +127,15 @@ mainView : Html Msg
 mainView =
     div [ class "row" ]
         (List.map
-            (\( colour, action, text_ ) ->
+            (\( colour, target, text_ ) ->
                 div [ class "col-md-3" ]
-                    [ button [ class ("tile " ++ Colours.toString colour), onClick action ] [ text text_ ]
+                    [ a [ class ("tile " ++ Colours.toString colour), href target ] [ text text_ ]
                     ]
             )
-            [ ( Blue, RedirectTo blogPath, "Blog" )
-            , ( Green, NavigateTo Projects.Routing.path, "Projects" )
-            , ( Orange, NavigateTo cvPath, "CV" )
-            , ( Magenta, NavigateTo Talks.Routing.path, "Talks" )
+            [ ( Blue, blogPath, "Blog" )
+            , ( Green, Projects.Routing.path, "Projects" )
+            , ( Orange, cvPath, "CV" )
+            , ( Magenta, Talks.Routing.path, "Talks" )
             ]
         )
 
@@ -144,20 +143,14 @@ mainView =
 nameLine : Html Msg
 nameLine =
     div [ class "row" ]
-        [ div [ class "name text-end", onClick (NavigateTo rootPath) ]
-            [ text "Xavier Maso" ]
-        ]
+        [ a [ class "name text-end", href rootPath ] [ text "Xavier Maso" ] ]
 
 
 footer : Html Msg
 footer =
     div [ class "row footer" ]
         [ div [ class "col-md-2 offset-md-10" ]
-            [ div [ class "section" ]
-                [ h6 [ onClick (NavigateTo meowPath) ]
-                    [ text "Such reserved rights." ]
-                ]
-            ]
+            [ a [ class "section", href meowPath ] [ text "Such reserved rights." ] ]
         ]
 
 

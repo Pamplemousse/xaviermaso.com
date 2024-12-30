@@ -14,6 +14,5 @@ type Msg
     | UrlChanged Url
     | OnFetchCatGif (WebData CatGif)
     | NavigateTo String
-    | RedirectTo String
     | ProjectsMsg (TiledList.Msg Project)
     | TalksMsg (TiledList.Msg Talk)
