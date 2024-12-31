@@ -23,7 +23,8 @@ type Id
 
 type alias Listable a =
     { a
-        | title : String
+        | id : Id
+        , title : String
     }
 
 
@@ -31,12 +32,12 @@ type Msg a
     = OnFetch (WebData (List a))
     | LinkMsg Link.Msg
     | CloseDescriptionOfCurrent
-    | ShowDescriptionOf a
+    | ShowDescriptionOf Id
 
 
 type alias Model a =
     { all : WebData (List a)
-    , current : Maybe a
+    , idCurrent : Maybe Id
     }
 
 
@@ -48,7 +49,7 @@ idDecoder =
 initialModel : Model a
 initialModel =
     { all = RemoteData.Loading
-    , current = Nothing
+    , idCurrent = Nothing
     }
 
 
@@ -73,13 +74,13 @@ update msg model =
             , Cmd.none
             )
 
-        ShowDescriptionOf element ->
-            ( { model | current = Just element }
+        ShowDescriptionOf elementId ->
+            ( { model | idCurrent = Just elementId }
             , Cmd.none
             )
 
         CloseDescriptionOfCurrent ->
-            ( { model | current = Nothing }
+            ( { model | idCurrent = Nothing }
             , Cmd.none
             )
 
@@ -95,7 +96,7 @@ type alias CurrentRenderer a =
 {-| The whole representation of a list: the tiles representing items, and the details whenever an element is clicked on.
 -}
 view : Model (Listable a) -> Int -> CurrentRenderer (Listable a) -> Colour -> Html (Msg (Listable a))
-view { all, current } numberOfColumns renderCurrent colour =
+view { all, idCurrent } numberOfColumns renderCurrent colour =
     case all of
         RemoteData.NotAsked ->
             text ""
@@ -104,6 +105,10 @@ view { all, current } numberOfColumns renderCurrent colour =
             text "Loading..."
 
         RemoteData.Success elements ->
+            let
+                current =
+                    Maybe.andThen (\x -> List.head (List.filter (\e -> e.id == x) elements)) idCurrent
+            in
             div []
                 [ viewCurrent current (renderCurrent colour)
                 , viewAll elements numberOfColumns colour
@@ -154,7 +159,7 @@ viewTile c numberOfColumns index element =
         width =
             12 // numberOfColumns
     in
-    div [ class ("col-md-" ++ String.fromInt width), onClick (ShowDescriptionOf element) ]
+    div [ class ("col-md-" ++ String.fromInt width), onClick (ShowDescriptionOf element.id) ]
         [ button [ class ("list-component-tile " ++ colour) ] [ element.title |> String.toLower |> text ]
         ]
 
