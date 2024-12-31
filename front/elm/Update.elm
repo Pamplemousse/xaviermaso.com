@@ -41,7 +41,7 @@ update msg model =
                             Cmd.none
 
                 voidCurrent m =
-                    { m | current = Nothing }
+                    { m | idCurrent = Nothing }
 
                 voidedModel =
                     { model
