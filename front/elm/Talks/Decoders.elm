@@ -6,6 +6,7 @@ import Json.Decode.Pipeline exposing (optional, required)
 import Lang
 import Link
 import Talks.Models exposing (Conference, Talk)
+import TiledList exposing (idDecoder)
 
 
 decoder : Decode.Decoder (List Talk)
@@ -16,7 +17,7 @@ decoder =
 talkDecoder : Decode.Decoder Talk
 talkDecoder =
     Decode.succeed Talk
-        |> required "id" Decode.int
+        |> required "id" idDecoder
         |> required "title" Decode.string
         |> required "description" Decode.string
         |> required "conferences" (Decode.list conferenceDecoder)

@@ -3,11 +3,8 @@ module Talks.Models exposing (Conference, Talk, talksDefaultUrl)
 import Date exposing (Date)
 import Lang exposing (Lang)
 import Link
+import TiledList exposing (Id)
 import Url exposing (Protocol(..), Url)
-
-
-type alias Id =
-    Int
 
 
 type alias Conference =

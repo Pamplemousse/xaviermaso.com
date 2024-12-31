@@ -1,12 +1,12 @@
 {
   "projects": [{
-    "id": 0,
+    "id": "da6da639-067f-4f6c-8fff-a476f171ab66",
     "title": "Personal Stack",
     "dates": "2014 - today",
     "tags": "devops, nixos, docker, ansible",
     "description": "Owner and co-owner of servers used to self-host services such as <a target='_blank' href='https://selfoss.aditu.de/'>Selfoss</a>, <a target='_blank' href='https://cryptpad.org/'>Cryptpad</a>, <a target='_blank' href='https://grafana.com/'>Grafana</a>, VPNs, and websites.<br/>Mostly running on <a target='_blank' href='https://nixos.org'>NixOS</a> machines; Some legacy Debian whose configuration has been automated with Ansible are still hanging around."
   }, {
-   "id": 1,
+   "id": "17bdc786-ff61-4e41-8d26-36012e1d0754",
    "title": "Alfred",
    "dates": "july 2023 (rebirth) - today",
    "tags": "rust, matrix, nix",
@@ -15,7 +15,7 @@
    }],
    "description": "My very own butler.<br/>Implemented in Rust, reachable over <a target='_blank' href='https://matrix.org'>Matrix</a>, packaged for <a target='_blank' href='https://nixos.org'>Nix and NixOS</a>. Part of the data it collects eventually finds its way to my own <a target='_blank' href='https://grafana.com/'>Grafana</a> instance."
   }, {
-    "id": 2,
+    "id": "17bdc786-ff61-4e41-8d26-36012e1d0754",
     "title": "xaviermaso.com",
     "dates": "2014 - today",
     "tags": "nodejs, elm, front-end development, devops",
@@ -24,19 +24,19 @@
     }],
     "description": "The gorgeous website you are looking at right now. With 100% AI-free content.<br/>Front-end written in <a target='_blank' href='https://elm-lang.org/'>Elm</a>, back-end powered by ExpressJS."
   }, {
-    "id": 3,
+    "id": "17bdc786-ff61-4e41-8d26-36012e1d0754",
     "title": "Nix/NixOS",
     "dates": "july 2019 - today",
     "tags": "opensource, development, linux",
     "description": "<a target='_blank' href='https://nixos.org'>Nix/NixOS</a> user, I have been contributing to its ecosystem in the last few years by: packaging applications, writing new or improving existing modules, participating to its forums, etc."
   }, {
-    "id": 4,
+    "id": "00deb28c-5ade-4df4-87db-b5c95af9bbce",
     "title": "Fuzzing Nix",
     "dates": "june 2021 - september 2021",
     "tags": "opensource, security",
     "description": "During a fellowship sponsored by <a target='_blank' href='https://www.tweag.io/'>Tweag</a>, I had the opportunity to do research and development on fuzzing the <a target='_blank' href='https://nixos.org'>Nix package manager</a>. Reports can be found on the community Discourse: <a target='_blank' href='https://discourse.nixos.org/t/tweag-fellowship-fuzzing-nix-0'>Update #0</a>, <a target='_blank' href='https://discourse.nixos.org/t/tweag-fellowship-fuzzing-nix-1'>Update #1</a>, <a target='_blank' href='https://discourse.nixos.org/t/tweag-fellowship-fuzzing-nix-2'>Update #2</a>, <a target='_blank' href='https://discourse.nixos.org/t/tweag-fellowship-fuzzing-nix-3'>Update #3</a>, <a target='_blank' href='https://discourse.nixos.org/t/tweag-fellowship-fuzzing-nix-4'>Update #4</a>."
   }, {
-    "id": 5,
+    "id": "a226f21b-6c1b-4110-b7bd-edaaec5ad6e6",
     "title": "OWASP ZAP",
     "dates": "may - august 2018",
     "tags": "web security, javascript, R&D",
@@ -47,7 +47,7 @@
     "description": "Intern at Mozilla during the summer of 2018 in the <a href='https://wiki.mozilla.org/Security/FirefoxOperations' target='_blank'>FoxSec</a> team. I worked on improving <a href='https://www.owasp.org/index.php/OWASP_Zed_Attack_Proxy_Project'>OWASP ZAP</a>, for it to be able to scan \"modern\" web applications.<br/>The effort has been focused around two keys areas: write the <a href='https://github.com/zaproxy/zaproxy/issues/4939' target='_blank'>FrontEndScanner addon</a> (not yet released) for ZAP to allow users to run \"client-side scripts\"; and create a front-end library to help debug modern web pages: the <a href='https://www.npmjs.com/package/@zaproxy/front-end-tracker' target='_blank'>@zaproxy/front-end-tracker</a>."
   }],
   "talks": [{
-    "id": 0,
+    "id": "b9c2a5b9-5d01-4ede-9be8-043e768d3187",
     "title": "Security can also \"Shift Left\"",
     "description": "We all seek to avoid the tunnel effect by shortening feedback loops. On that aspect, \"shifting left\" seems pertinent: integrate practices and tools that provide us with information about the state of security of our products as soon as possible, during development, so that one can act on what causes trouble before everything turns sour.\nWhat if security could be treated like any other quality effort? Or are we doomed to see the security of our applications only through audit reports?\n In this talk, I propose to take a look at a couple of tools and techniques that will help uncover security issues that may be hiding within your applications as you are working on them.",
     "conferences": [{
