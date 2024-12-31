@@ -1,4 +1,4 @@
-module TiledList exposing (Model, Msg(..), fetch, initialModel, update, view)
+module TiledList exposing (Id, Model, Msg(..), fetch, idDecoder, initialModel, update, view)
 
 {-| A representation of a list of elements as tiles on a page.
 Tiles can be clicked on to bring up the relevant element's details.
@@ -12,8 +12,13 @@ import Http exposing (expectJson)
 import HttpErrorWrapper exposing (buildErrorMessage)
 import Json.Decode as Decode
 import Link
+import Prng.Uuid
 import RemoteData exposing (WebData)
 import Url exposing (Url)
+
+
+type Id
+    = Uuid Prng.Uuid.Uuid
 
 
 type alias Listable a =
@@ -33,6 +38,11 @@ type alias Model a =
     { all : WebData (List a)
     , current : Maybe a
     }
+
+
+idDecoder : Decode.Decoder Id
+idDecoder =
+    Decode.map Uuid Prng.Uuid.decoder
 
 
 initialModel : Model a
