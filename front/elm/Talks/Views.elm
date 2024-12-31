@@ -55,7 +55,7 @@ renderCurrent colour talk =
                 , renderConferences talk.conferences
                 , i
                     [ class "fa fa-close fa-2x close"
-                    , onClick (CloseDescriptionOf talk)
+                    , onClick CloseDescriptionOfCurrent
                     ]
                     []
                 ]

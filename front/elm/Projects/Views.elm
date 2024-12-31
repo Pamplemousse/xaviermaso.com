@@ -43,7 +43,7 @@ renderCurrent colour project =
                 , div [] (project.links |> List.map (Link.view >> Html.map LinkMsg))
                 , i
                     [ class "fa fa-close fa-2x close"
-                    , onClick (CloseDescriptionOf project)
+                    , onClick CloseDescriptionOfCurrent
                     ]
                     []
                 ]

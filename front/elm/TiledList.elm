@@ -25,7 +25,7 @@ type alias Listable a =
 type Msg a
     = OnFetch (WebData (List a))
     | LinkMsg Link.Msg
-    | CloseDescriptionOf a
+    | CloseDescriptionOfCurrent
     | ShowDescriptionOf a
 
 
@@ -68,7 +68,7 @@ update msg model =
             , Cmd.none
             )
 
-        CloseDescriptionOf _ ->
+        CloseDescriptionOfCurrent ->
             ( { model | current = Nothing }
             , Cmd.none
             )
