@@ -5,11 +5,11 @@ import CatGifs.Models exposing (CatGif)
 import Projects.Models exposing (Project)
 import RemoteData exposing (WebData)
 import Routing exposing (Route)
-import SocialMedia.Models exposing (SocialMedium, initialSocialMedia)
+import SocialMedia.Models exposing (SocialMedium)
 import Talks.Models exposing (Talk)
 import TiledList
 import Url exposing (Url)
-import Url.Parser exposing (parse)
+import Url.Parser
 
 
 type alias Model =
