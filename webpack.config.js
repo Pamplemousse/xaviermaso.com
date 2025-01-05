@@ -67,6 +67,9 @@ if (TARGET_ENV === 'development') {
           watch: true
         }
       ],
+      // Serve `index.html` for any 404;
+      // This approximates the server's behaviour when reaching pages served by front-end routing.
+      historyApiFallback: true,
       hot: true,
       host: '127.0.0.1',
       port: 8080
