@@ -42,7 +42,8 @@ var commonConfig = {
     new HtmlWebpackPlugin({
       template: path.join(__dirname, 'front', 'static', 'index.html'),
       inject: 'body',
-      filename: 'index.html'
+      filename: 'index.html',
+      base: (TARGET_ENV === 'production') ? 'https://www.xaviermaso.com' : 'http://localhost:8080'
     }),
     new webpack.EnvironmentPlugin({
       NODE_ENV: 'development'
