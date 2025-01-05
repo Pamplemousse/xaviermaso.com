@@ -14,6 +14,10 @@ var TARGET_ENV = process.env.npm_lifecycle_event === 'build' ? 'production' : 'd
 
 // common webpack config
 var commonConfig = {
+  entry: [
+    path.join(__dirname, 'front', 'static', 'index.js')
+  ],
+
   output: {
     path: path.resolve(__dirname, 'dist/'),
     filename: '[contenthash].js'
@@ -51,10 +55,6 @@ if (TARGET_ENV === 'development') {
   console.log('Serving locally...')
 
   module.exports = merge(commonConfig, {
-    entry: [
-      path.join(__dirname, 'front', 'static', 'index.js')
-    ],
-
     devServer: {
       static: [
         {
@@ -109,8 +109,6 @@ if (TARGET_ENV === 'production') {
   console.log('Building for prod...')
 
   module.exports = merge(commonConfig, {
-    entry: path.join(__dirname, 'front', 'static', 'index.js'),
-
     mode: 'production',
 
     module: {
