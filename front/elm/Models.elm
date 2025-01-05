@@ -32,11 +32,37 @@ type alias Flags =
 
 initialModel : Key -> Url -> Url -> Model
 initialModel key url catGifsUrl =
+    let
+        route =
+            Url.Parser.parse Routing.routeParser url
+
+        projects =
+            TiledList.initialModel
+
+        currentProject =
+            case route of
+                Just (Routing.ProjectsRoute id) ->
+                    id
+
+                _ ->
+                    Nothing
+
+        talks =
+            TiledList.initialModel
+
+        currentTalk =
+            case route of
+                Just (Routing.TalksRoute id) ->
+                    id
+
+                _ ->
+                    Nothing
+    in
     { catGifsUrl = catGifsUrl
     , currentCatGif = RemoteData.Loading
     , socialMedia = SocialMedia.Models.initialSocialMedia
     , key = key
-    , route = Url.Parser.parse Routing.routeParser url
-    , projects = TiledList.initialModel
-    , talks = TiledList.initialModel
+    , route = route
+    , projects = { projects | idCurrent = currentProject }
+    , talks = { talks | idCurrent = currentTalk }
     }
