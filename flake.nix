@@ -16,6 +16,7 @@
       devShell = nixpkgs-pkgs.mkShell {
         buildInputs = with nixpkgs-pkgs; [
           nodejs_20
+          podman
         ];
       };
     }

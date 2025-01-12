@@ -1,0 +1,41 @@
+image: nixos/unstable
+sources:
+  - https://git.sr.ht/~pamplemousse/xaviermaso.com
+environment:
+  NIX_CONFIG: "experimental-features = nix-command flakes"
+secrets:
+  - ffce471b-c586-4d54-a9cc-bc729b3bff11
+tasks:
+  - install: |
+      cd xaviermaso.com
+      nix develop --command bash -c \
+        "npm install"
+
+  - check: |
+      cd xaviermaso.com
+      nix develop --command bash -c \
+        "npm run check"
+
+  - build: |
+      cd xaviermaso.com
+      nix develop --command bash -c \
+        "npm run build && \
+         podman image build . -t pamplemousse/xaviermaso.com:latest"
+
+  - push:
+      set +x
+      nix develop --command bash -c \
+        'podman login --username pamplemousse --password "$(cat ~/.dockerhub_password)"'
+      set -x
+
+      image="docker://docker.io/pamplemousse/xaviermaso.com"
+      nix develop --command bash -c \
+        'podman push "$image:latest"'
+
+      head="$(git rev-parse HEAD)"
+      matching_refs="$(git show-ref | grep "$head" | grep "refs/tags/")"
+      if [[ "$matching_refs" != "" ]]; then
+        tag="$(echo $matching_refs | cut -d'/' -f3)"
+        nix develop --command bash -c \
+          'podman push "$image:$tag"'
+      fi
