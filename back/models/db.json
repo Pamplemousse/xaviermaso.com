@@ -59,5 +59,17 @@
       "slides": { "target": "atbdx2024_slides.pdf" },
       "sources": { "target": "https://git.sr.ht/~pamplemousse/security_can_also_shift_left/tree/atbdx2024" }
     }]
+  }, {
+    "id": "de8dda85-0ea8-4c7a-8e82-4fbd0ceea5bd",
+    "title": "Bits of Static Binary Analysis",
+    "description": "A presentation I gave as a guest lecturer of CSE545 during the Fall semester of 2020 at Arizona State University, meant to be a hands-on introduction on data-flow analysis using `angr` to find taint-style vulnerabilities in binaries.",
+    "conferences": [{
+      "organisation": "ASU, CSE545",
+      "date": "2020-10",
+      "duration": 80,
+      "lang": "EN",
+      "recording": { "target": "https://www.youtube.com/watch?v=4SMRnpuqN6E" },
+      "sources": { "target": "https://github.com/Pamplemousse/bits_of_static_binary_analysis" }
+    }]
   }]
 }
