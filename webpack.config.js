@@ -169,6 +169,7 @@ if (TARGET_ENV === 'production') {
         ], [
           'atbdx2024_slides.pdf',
           'internship_report_2018.pdf',
+          'ptc2025_slides.pdf',
           'xaviermaso.pdf'
         ].map((f) => {
           return {

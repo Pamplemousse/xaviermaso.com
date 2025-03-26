@@ -58,6 +58,13 @@
       "recording": { "target": "https://www.youtube.com/watch?v=7HcquGuYkEw" },
       "slides": { "target": "atbdx2024_slides.pdf" },
       "sources": { "target": "https://git.sr.ht/~pamplemousse/security_can_also_shift_left/tree/atbdx2024" }
+    }, {
+      "organisation": "Paris Test Conf",
+      "date": "2025-03-26",
+      "duration": 50,
+      "lang": "FR",
+      "slides": { "target": "ptc2025_slides.pdf" },
+      "sources": { "target": "https://git.sr.ht/~pamplemousse/security_can_also_shift_left/tree/ptc2025" }
     }]
   }, {
     "id": "de8dda85-0ea8-4c7a-8e82-4fbd0ceea5bd",
