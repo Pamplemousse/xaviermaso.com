@@ -71,7 +71,7 @@ renderConferences conferences =
         div []
             [ br [] []
             , div [ class "textDesc" ] [ text "Presented at the following venues:" ]
-            , conferences |> List.map renderConference |> ul [ class "list-group list-group-flush" ]
+            , conferences |> List.sortWith (\x -> \y -> Date.compare x.date y.date) |> List.reverse |> List.map renderConference |> ul [ class "list-group list-group-flush" ]
             ]
 
 
