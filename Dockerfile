@@ -1,4 +1,4 @@
-FROM node:20
+FROM docker.io/node:20
 
 RUN apt-get update && apt-get install apt-transport-https
 
