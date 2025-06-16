@@ -16,26 +16,42 @@ tasks:
       nix develop --command bash -c \
         "npm run check"
 
+  - prepare: |
+      mkdir -p ~/.config/containers
+
+      cat <<__EOF__ > ~/.config/containers/policy.json
+      {
+        "default": [{
+          "type":"insecureAcceptAnything"
+        }]
+      }
+      __EOF__
+
   - build: |
       cd xaviermaso.com
       nix develop --command bash -c \
         "npm run build && \
-         podman image build . -t pamplemousse/xaviermaso.com:latest"
+         podman image build . -t docker.io/pamplemousse/xaviermaso.com:latest"
 
-  - push:
+  - push: |
+      cd xaviermaso.com
       set +x
       nix develop --command bash -c \
-        'podman login --username pamplemousse --password "$(cat ~/.dockerhub_password)"'
+        'podman login docker.io --username pamplemousse --password "$(cat ~/.dockerhub_password)"'
       set -x
 
-      image="docker://docker.io/pamplemousse/xaviermaso.com"
+      image="docker.io/pamplemousse/xaviermaso.com"
       nix develop --command bash -c \
-        'podman push "$image:latest"'
+        "podman push ${image}:latest"
 
       head="$(git rev-parse HEAD)"
-      matching_refs="$(git show-ref | grep "$head" | grep "refs/tags/")"
+      matching_refs="$(git show-ref | grep "$head" | grep "refs/tags/")" || true
       if [[ "$matching_refs" != "" ]]; then
         tag="$(echo $matching_refs | cut -d'/' -f3)"
         nix develop --command bash -c \
-          'podman push "$image:$tag"'
+          "podman push ${image}:${tag}"
       fi
+triggers:
+  - action: email
+    condition: failure
+    to: admin@xaviermaso.com
