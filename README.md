@@ -12,7 +12,7 @@
 nix develop
 
 # install dependencies
-npm install
+npm ci
 elm make
 
 # run the app in dev mode

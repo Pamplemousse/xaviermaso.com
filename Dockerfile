@@ -11,7 +11,7 @@ ONBUILD ENV NODE_ENV $NODE_ENV
 COPY package.json /usr/src/app/
 COPY package-lock.json /usr/src/app/
 
-RUN npm install --omit=dev
+RUN npm ci --omit=dev
 
 COPY back /usr/src/app/back
 COPY dist /usr/src/app/dist
