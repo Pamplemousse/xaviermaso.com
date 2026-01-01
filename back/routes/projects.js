@@ -1,9 +1,9 @@
 'use strict'
 
-var express = require('express')
-var router = express.Router()
+const express = require('express')
+const router = express.Router()
 
-var projects = require('../models/data.js').projects
+const projects = require('../models/data.js').projects
 
 /* GET projects page. */
 router.get('/', function (req, res) {

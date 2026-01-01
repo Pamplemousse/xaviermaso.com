@@ -1,19 +1,19 @@
-var path = require('path')
-var webpack = require('webpack')
-var merge = require('webpack-merge')
-var HtmlWebpackPlugin = require('html-webpack-plugin')
-var MiniCssExtractPlugin = require('mini-css-extract-plugin')
-var CopyWebpackPlugin = require('copy-webpack-plugin')
-var TerserPlugin = require('terser-webpack-plugin')
-var OptimizeCSSAssetsPlugin = require('css-minimizer-webpack-plugin')
+const path = require('path')
+const webpack = require('webpack')
+const merge = require('webpack-merge')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
+const TerserPlugin = require('terser-webpack-plugin')
+const OptimizeCSSAssetsPlugin = require('css-minimizer-webpack-plugin')
 
 console.log('WEBPACK GO!')
 
 // detemine build env
-var TARGET_ENV = process.env.npm_lifecycle_event === 'build' ? 'production' : 'development'
+const TARGET_ENV = process.env.npm_lifecycle_event === 'build' ? 'production' : 'development'
 
 // common webpack config
-var commonConfig = {
+const commonConfig = {
   entry: [
     path.join(__dirname, 'front', 'static', 'index.js')
   ],

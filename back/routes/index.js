@@ -1,8 +1,8 @@
 'use strict'
 
-var express = require('express')
-var path = require('path')
-var router = express.Router()
+const express = require('express')
+const path = require('path')
+const router = express.Router()
 
 /* GET single page application */
 router.get('/', function (req, res) {

@@ -4,8 +4,8 @@ const axios = require('axios')
 const path = require('path')
 const slowDown = require('express-slow-down')
 
-var express = require('express')
-var router = express.Router()
+const express = require('express')
+const router = express.Router()
 
 const speedLimiter = slowDown({
   windowMs: 15 * 60 * 1000, // keep the record of requests for 15 minutes

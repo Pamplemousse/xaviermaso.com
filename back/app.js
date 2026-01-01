@@ -1,13 +1,13 @@
 'use strict'
 
-var express = require('express')
-var path = require('path')
-var logger = require('morgan')
-var cors = require('cors')
+const express = require('express')
+const path = require('path')
+const logger = require('morgan')
+const cors = require('cors')
 
-var app = express()
+const app = express()
 
-var server = app.listen(8000, function () {
+let server = app.listen(8000, function () {
   console.log('Listening on port %d', server.address().port)
 })
 
@@ -26,7 +26,7 @@ app.use('*', require('./routes/index'))
 
 // catch 404 and forwarding to error handler
 app.use(function (req, res, next) {
-  var err = new Error('Not Found')
+  const err = new Error('Not Found')
   err.status = 404
   next(err)
 })
