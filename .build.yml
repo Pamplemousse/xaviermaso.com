@@ -9,7 +9,7 @@ tasks:
   - install: |
       cd xaviermaso.com
       nix develop --command bash -c \
-        "npm install"
+        "npm ci"
 
   - check: |
       cd xaviermaso.com
