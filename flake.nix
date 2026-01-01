@@ -2,8 +2,8 @@
   description = "xaviermaso.com's flake";
 
   inputs = {
-    flake-utils.url = github:numtide/flake-utils;
-    nixpkgs.url = github:NixOs/nixpkgs/nixos-23.11;
+    flake-utils.url = "github:numtide/flake-utils";
+    nixpkgs.url = "github:NixOs/nixpkgs/nixos-23.11";
   };
 
   outputs = { self, flake-utils, nixpkgs }: flake-utils.lib.eachDefaultSystem (system:
