@@ -7,7 +7,7 @@ const cors = require('cors')
 
 const app = express()
 
-let server = app.listen(8000, function () {
+const server = app.listen(8000, function () {
   console.log('Listening on port %d', server.address().port)
 })
 
