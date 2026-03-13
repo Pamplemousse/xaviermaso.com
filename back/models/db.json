@@ -47,6 +47,18 @@
     "description": "Intern at Mozilla during the summer of 2018 in the <a href='https://wiki.mozilla.org/Security/FirefoxOperations' target='_blank'>FoxSec</a> team. I worked on improving <a href='https://www.owasp.org/index.php/OWASP_Zed_Attack_Proxy_Project'>OWASP ZAP</a>, for it to be able to scan \"modern\" web applications.<br/>The effort has been focused around two keys areas: write the <a href='https://github.com/zaproxy/zaproxy/issues/4939' target='_blank'>FrontEndScanner addon</a> (not yet released) for ZAP to allow users to run \"client-side scripts\"; and create a front-end library to help debug modern web pages: the <a href='https://www.npmjs.com/package/@zaproxy/front-end-tracker' target='_blank'>@zaproxy/front-end-tracker</a>."
   }],
   "talks": [{
+    "id": "f6ffdb4a-8a9d-4f75-96d1-7f83315a08cb",
+    "title": "`jq`, deal with `JSON` like a boss",
+    "description": "A live coding presentation on the world renowned JSON processor. First I present the JSON format, then go on a tour of jq's features: starting with the basics (filters, reading, and manipulating data), then going through operation composition, producing and updating values and data structures, looping capabilities, CLI options, functions, etc. We look at everything (not even close)!",
+    "conferences": [{
+      "organisation": "BordeauxJS",
+      "date": "2026-03-12",
+      "duration": 60,
+      "lang": "FR",
+      "slides": { "target": "bordeauxjs2026_slides.pdf" },
+      "sources": { "target": "https://git.sr.ht/~pamplemousse/jq_like_a_boss/tree/bordeauxjs2026" }
+    }]
+  }, {
     "id": "b9c2a5b9-5d01-4ede-9be8-043e768d3187",
     "title": "Security can also \"Shift Left\"",
     "description": "We all seek to avoid the tunnel effect by shortening feedback loops. On that aspect, \"shifting left\" seems pertinent: integrate practices and tools that provide us with information about the state of security of our products as soon as possible, during development, so that one can act on what causes trouble before everything turns sour.\nWhat if security could be treated like any other quality effort? Or are we doomed to see the security of our applications only through audit reports?\n In this talk, I propose to take a look at a couple of tools and techniques that will help uncover security issues that may be hiding within your applications as you are working on them.",
