@@ -2,7 +2,7 @@ module Projects.Views exposing (renderCurrent)
 
 import Colours exposing (Colour, toStringLight)
 import Html exposing (Html, a, div, h1, h3, h4, i, text)
-import Html.Attributes exposing (class, href)
+import Html.Attributes exposing (attribute, class, href)
 import Html.Parser
 import Html.Parser.Util
 import Link
@@ -40,8 +40,8 @@ renderCurrent colour project =
                         [ class "col-md-12 textDesc" ]
                         descriptionNode
                     ]
-                , div [] (project.links |> List.map (Link.view >> Html.map LinkMsg))
-                , a [ href ("/" ++ path) ]
+                , div [] (project.links |> List.map (Link.view "Visit to learn more about the project" >> Html.map LinkMsg))
+                , a [ href ("/" ++ path), attribute "aria-label" "Go back to the list of projects." ]
                     [ i [ class "fa fa-close fa-2x close" ]
                         []
                     ]

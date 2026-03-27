@@ -6,7 +6,7 @@ Tiles can be clicked on to bring up the relevant element's details.
 
 import Colours exposing (Colour)
 import Html exposing (Html, a, div, text)
-import Html.Attributes exposing (class, href)
+import Html.Attributes exposing (attribute, class, href)
 import Http exposing (expectJson)
 import HttpErrorWrapper exposing (buildErrorMessage)
 import Json.Decode as Decode
@@ -185,7 +185,7 @@ viewTile rootPath c numberOfColumns index element =
             12 // numberOfColumns
     in
     div [ class ("col-md-" ++ String.fromInt width) ]
-        [ a [ class ("list-component-tile " ++ colour), href navigationTarget ] [ element.title |> String.toLower |> text ]
+        [ a [ class ("list-component-tile " ++ colour), href navigationTarget, attribute "aria-label" ("See details of \"" ++ element.title ++ "\"") ] [ element.title |> String.toLower |> text ]
         ]
 
 

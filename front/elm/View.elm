@@ -119,7 +119,7 @@ cvView =
                 , div [] [ text "The necessary plug-in seems to be missing." ]
                 , br [] []
                 , br [] []
-                , a [ href "xaviermaso.pdf" ] [ text "Download the CV in PDF format." ]
+                , a [ href "xaviermaso.pdf", attribute "aria-label" "Download the resume in CV format." ] [ text "Download the CV in PDF format." ]
                 ]
             ]
         ]
@@ -131,7 +131,7 @@ mainView =
         (List.map
             (\( colour, target, text_ ) ->
                 div [ class "col-md-3" ]
-                    [ a [ class ("tile " ++ Colours.toString colour), href target ] [ text text_ ]
+                    [ a [ class ("tile " ++ Colours.toString colour), href target, attribute "aria-label" ("Navigate to the " ++ text_ ++ " section") ] [ text text_ ]
                     ]
             )
             [ ( Blue, blogPath, "Blog" )
@@ -145,7 +145,7 @@ mainView =
 nameLine : Html Msg
 nameLine =
     div [ class "row" ]
-        [ a [ class "name text-end", href rootPath ] [ text "Xavier Maso" ] ]
+        [ a [ class "name text-end", href rootPath, attribute "aria-label" "Go to the main page" ] [ text "Xavier Maso" ] ]
 
 
 layout : Model -> Html Msg -> Html Msg
@@ -160,7 +160,7 @@ layout model content =
         footer_ =
             footer [ class "row footer" ]
                 [ div [ class "col-md-2 offset-md-10" ]
-                    [ a [ class "section", href meowPath ] [ text "Such reserved rights." ] ]
+                    [ a [ class "section", href meowPath, attribute "aria-label" "Go see the reserved rights" ] [ text "Such reserved rights." ] ]
                 ]
     in
     div [ class "container" ]

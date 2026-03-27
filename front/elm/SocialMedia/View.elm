@@ -1,7 +1,7 @@
 module SocialMedia.View exposing (view)
 
 import Html exposing (Html, a, div, i)
-import Html.Attributes exposing (alt, class, href, rel, target)
+import Html.Attributes exposing (alt, attribute, class, href, rel, target)
 import Messages exposing (Msg)
 import Models exposing (Model)
 import SocialMedia.Models exposing (SocialMedium)
@@ -9,7 +9,7 @@ import SocialMedia.Models exposing (SocialMedium)
 
 formatSocialLogo : SocialMedium -> Html Msg
 formatSocialLogo socialMedium =
-    a [ href socialMedium.hrefTarget, rel "noreferrer", target "_blank" ]
+    a [ href socialMedium.hrefTarget, rel "noreferrer", target "_blank", attribute "aria-label" socialMedium.label ]
         [ i [ class ("fa social-icon " ++ socialMedium.imageClass), alt socialMedium.altText ] []
         ]
 

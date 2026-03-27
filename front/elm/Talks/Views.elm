@@ -3,7 +3,7 @@ module Talks.Views exposing (renderCurrent)
 import Colours exposing (Colour, toStringLight)
 import Date exposing (format, year)
 import Html exposing (Html, a, br, div, h1, h3, i, li, span, text, ul)
-import Html.Attributes exposing (class, href)
+import Html.Attributes exposing (attribute, class, href)
 import Html.Extra exposing (viewMaybe)
 import Lang
 import Link
@@ -53,7 +53,7 @@ renderCurrent colour talk =
                         [ text talk.description ]
                     ]
                 , renderConferences talk.conferences
-                , a [ href ("/" ++ path) ]
+                , a [ href ("/" ++ path), attribute "aria-label" "Go back to the list of talks." ]
                     [ i [ class "fa fa-close fa-2x close" ]
                         []
                     ]
@@ -82,13 +82,13 @@ renderConference c =
             c.date |> format "MMMM y"
 
         recording =
-            c.recording |> viewMaybe (Link.view >> Html.map LinkMsg >> (\s -> div [] [ s, span [ class "textDesc" ] [ text (" (" ++ (c.duration |> String.fromInt) ++ "min)") ] ]))
+            c.recording |> viewMaybe (Link.view "Go watch the recording of the presentation" >> Html.map LinkMsg >> (\s -> div [] [ s, span [ class "textDesc" ] [ text (" (" ++ (c.duration |> String.fromInt) ++ "min)") ] ]))
 
         slides =
-            c.slides |> viewMaybe (Link.view >> Html.map LinkMsg)
+            c.slides |> viewMaybe (Link.view "Read the slides of the presentation" >> Html.map LinkMsg)
 
         sources =
-            c.sources |> viewMaybe (Link.view >> Html.map LinkMsg)
+            c.sources |> viewMaybe (Link.view "Check the source material of the presentation" >> Html.map LinkMsg)
     in
     li [ class "list-group-item" ]
         [ div [ class "me-auto" ]

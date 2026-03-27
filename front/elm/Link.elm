@@ -4,7 +4,7 @@ module Link exposing (Model, Msg(..), decoder, decoderWithDefaultValue, view)
 -}
 
 import Html exposing (Html, a, text)
-import Html.Attributes exposing (class, href, rel, target)
+import Html.Attributes exposing (attribute, class, href, rel, target)
 import Json.Decode as Decode
 import Json.Decode.Pipeline exposing (optional, required)
 
@@ -31,8 +31,8 @@ decoderWithDefaultValue defaultValue =
     Decode.map (\slides -> { slides | value = Just defaultValue }) decoder
 
 
-view : Model -> Html Msg
-view link =
+view : String -> Model -> Html Msg
+view label link =
     let
         link_value =
             case link.value of
@@ -42,4 +42,4 @@ view link =
                 Just value ->
                     value
     in
-    a [ href link.target, rel "noreferrer", target "_blank", class "link" ] [ text link_value ]
+    a [ href link.target, rel "noreferrer", target "_blank", class "link", attribute "aria-label" label ] [ text link_value ]
