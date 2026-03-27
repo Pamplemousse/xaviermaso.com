@@ -21,39 +21,32 @@ view model =
     let
         layoutify =
             layout model
+
+        ( title, content ) =
+            case model.route of
+                Just route ->
+                    case route of
+                        Routing.MainRoute ->
+                            ( "XM | Main", mainView )
+
+                        Routing.CVRoute ->
+                            ( "XM | CV", cvView )
+
+                        Routing.MeowRoute ->
+                            ( "XM | Meow", meowView model )
+
+                        Routing.ProjectsRoute _ ->
+                            ( "XM | Projects", projectsView model )
+
+                        Routing.TalksRoute _ ->
+                            ( "XM | Talks", talksView model )
+
+                Nothing ->
+                    ( "XM | 404", notFoundView )
     in
-    case model.route of
-        Just route ->
-            case route of
-                Routing.MainRoute ->
-                    { title = "XM | Main"
-                    , body = [ layoutify mainView ]
-                    }
-
-                Routing.CVRoute ->
-                    { title = "XM | CV"
-                    , body = [ layoutify cvView ]
-                    }
-
-                Routing.MeowRoute ->
-                    { title = "XM | Meow"
-                    , body = [ layoutify (meowView model) ]
-                    }
-
-                Routing.ProjectsRoute _ ->
-                    { title = "XM | Projects"
-                    , body = [ layoutify (projectsView model) ]
-                    }
-
-                Routing.TalksRoute _ ->
-                    { title = "XM | Talks"
-                    , body = [ layoutify (talksView model) ]
-                    }
-
-        Nothing ->
-            { title = "XM | 404"
-            , body = [ layoutify notFoundView ]
-            }
+    { title = title
+    , body = [ layoutify content ]
+    }
 
 
 notFoundView : Html Msg
