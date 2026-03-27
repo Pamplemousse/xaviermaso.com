@@ -40,7 +40,6 @@ a:hover:not(.tile, .section, .name) {
   @at-root {
     a#{&} {
       text-decoration: none !important;
-      display: inline-block;
     }
   }
 }
@@ -54,11 +53,14 @@ a:hover:not(.tile, .section, .name) {
   border-bottom: 1px solid black;
 }
 
+.footer {
+  text-align: right;
+  font-style: italic;
+}
+
 .section {
   @include unstyled-a;
 
-  text-align: right;
-  font-style: italic;
   width: 100%;
 }
 
