@@ -112,12 +112,9 @@ cvView =
             , style "height" "80em"
             ]
             [ div [ class ("message " ++ Colours.toStringLight Orange) ]
-                [ br [] []
-                , div [] [ text "Oops !" ]
-                , br [] []
+                [ div [] [ text "Oops !" ]
                 , br [] []
                 , div [] [ text "The necessary plug-in seems to be missing." ]
-                , br [] []
                 , br [] []
                 , a [ href "xaviermaso.pdf", attribute "aria-label" "Download the resume in CV format." ] [ text "Download the CV in PDF format." ]
                 ]
