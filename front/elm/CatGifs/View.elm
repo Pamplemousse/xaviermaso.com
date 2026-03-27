@@ -2,7 +2,7 @@ module CatGifs.View exposing (view)
 
 import CatGifs.Models exposing (CatGif)
 import Html exposing (Html, div, img, text)
-import Html.Attributes exposing (class, src)
+import Html.Attributes exposing (alt, class, src)
 import HttpErrorWrapper exposing (buildErrorMessage)
 import Messages exposing (Msg)
 import RemoteData exposing (WebData)
@@ -21,7 +21,7 @@ view currentCatGif =
         RemoteData.Success catGif ->
             div [ class "row" ]
                 [ div [ class "col-md-4 col-md-offset-4" ]
-                    [ img [ src (catGif.gifUrl |> Url.toString) ] []
+                    [ img [ src (catGif.gifUrl |> Url.toString), alt "A cat gif, randomly fetched from the internet" ] []
                     ]
                 ]
 
