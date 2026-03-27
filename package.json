@@ -6,8 +6,9 @@
   "scripts": {
     "build": "export NODE_ENV=production; rimraf dist && rimraf elm-stuff && webpack",
     "check": "npm run check:js && npm run check:elm",
-    "check:elm": "elm-format --validate front/elm/",
+    "check:elm": "npm run format:elm -- --validate",
     "check:js": "standard",
+    "format:elm": "elm-format front/elm/",
     "dev": "export NODE_ENV=development; npm run start:back & npm run start:front",
     "start:back": "node back/app.js",
     "start:front": "webpack serve"
