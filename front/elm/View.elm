@@ -3,7 +3,7 @@ module View exposing (view)
 import Browser exposing (Document, UrlRequest(..))
 import CatGifs.View exposing (..)
 import Colours exposing (Colour(..))
-import Html exposing (Html, a, br, div, object, text)
+import Html exposing (Html, a, br, div, footer, header, main_, object, text)
 import Html.Attributes exposing (..)
 import Messages exposing (Msg(..))
 import Models exposing (Model)
@@ -148,19 +148,23 @@ nameLine =
         [ a [ class "name text-end", href rootPath ] [ text "Xavier Maso" ] ]
 
 
-footer : Html Msg
-footer =
-    div [ class "row footer" ]
-        [ div [ class "col-md-2 offset-md-10" ]
-            [ a [ class "section", href meowPath ] [ text "Such reserved rights." ] ]
-        ]
-
-
 layout : Model -> Html Msg -> Html Msg
 layout model content =
+    let
+        header_ =
+            header []
+                [ nameLine
+                , SocialMedia.View.view model
+                ]
+
+        footer_ =
+            footer [ class "row footer" ]
+                [ div [ class "col-md-2 offset-md-10" ]
+                    [ a [ class "section", href meowPath ] [ text "Such reserved rights." ] ]
+                ]
+    in
     div [ class "container" ]
-        [ nameLine
-        , SocialMedia.View.view model
-        , content
-        , footer
+        [ header_
+        , main_ [] [ content ]
+        , footer_
         ]
