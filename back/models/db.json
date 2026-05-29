@@ -47,6 +47,19 @@
     "description": "Intern at Mozilla during the summer of 2018 in the <a href='https://wiki.mozilla.org/Security/FirefoxOperations' target='_blank'>FoxSec</a> team. I worked on improving <a href='https://www.owasp.org/index.php/OWASP_Zed_Attack_Proxy_Project'>OWASP ZAP</a>, for it to be able to scan \"modern\" web applications.<br/>The effort has been focused around two keys areas: write the <a href='https://github.com/zaproxy/zaproxy/issues/4939' target='_blank'>FrontEndScanner addon</a> (not yet released) for ZAP to allow users to run \"client-side scripts\"; and create a front-end library to help debug modern web pages: the <a href='https://www.npmjs.com/package/@zaproxy/front-end-tracker' target='_blank'>@zaproxy/front-end-tracker</a>."
   }],
   "talks": [{
+    "id": "4dfe69b4-1468-4b3b-a957-f0ed5ffcb54e",
+    "title": "`opentofu`: A new diet for your infrastructure",
+    "description": "As soon as one has to operate a non trivial set of environments, it can be strategic to manage their definitions in writing. In this talk, I motivate migrating away from « Click Ops » to so-called « Infrastructure as Code » by presenting some of its benefits. Then I introduce `opentofu`, a reliable free software forked from a reknowned solution, before showing what makes it interesting, how it works and how to use it. In the end, I share some gotchas, and humble tips, grounded in my meager experience using the tool to manage real-world infrastructure.",
+    "conferences": [{
+      "organisation": "Journées du Logiciel Libre",
+      "date": "2026-05-30",
+      "duration": 55,
+      "lang": "FR",
+      "recording": { "target": "https://videos-libr.es/w/h9zksuJtakHcvYPFRM238S" },
+      "slides": { "target": "slides/jdll2026-opentofu.pdf" },
+      "sources": { "target": "https://git.sr.ht/~pamplemousse/opentofu_new_regime/tree/jdll2026" }
+    }]
+  }, {
     "id": "f6ffdb4a-8a9d-4f75-96d1-7f83315a08cb",
     "title": "`jq`, deal with `JSON` like a boss",
     "description": "A live coding presentation on the world renowned JSON processor. First I present the JSON format, then go on a tour of jq's features: starting with the basics (filters, reading, and manipulating data), then going through operation composition, producing and updating values and data structures, looping capabilities, CLI options, functions, etc. We look at everything (not even close)!",
@@ -57,6 +70,14 @@
       "lang": "FR",
       "slides": { "target": "slides/bordeauxjs2026.pdf" },
       "sources": { "target": "https://git.sr.ht/~pamplemousse/jq_like_a_boss/tree/bordeauxjs2026" }
+    }, {
+      "organisation": "Journées du Logiciel Libre",
+      "date": "2026-05-31",
+      "duration": 55,
+      "lang": "FR",
+      "recording": { "target": "https://videos-libr.es/w/smxtLDJtBNMjMy8G34BDHU" },
+      "slides": { "target": "slides/jdll2026-jq.pdf" },
+      "sources": { "target": "https://git.sr.ht/~pamplemousse/jq_like_a_boss/tree/jdll2026" }
     }]
   }, {
     "id": "b9c2a5b9-5d01-4ede-9be8-043e768d3187",

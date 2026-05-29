@@ -172,6 +172,8 @@ if (TARGET_ENV === 'production') {
 
           'slides/atbdx2024.pdf',
           'slides/bordeauxjs2026.pdf',
+          'slides/jdll2026-jq.pdf',
+          'slides/jdll2026-opentofu.pdf',
           'slides/ptc2025.pdf'
         ].map((f) => {
           return {
