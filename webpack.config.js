@@ -167,11 +167,12 @@ if (TARGET_ENV === 'production') {
             from: path.join(__dirname, 'front', 'static', 'img', 'favicon.ico')
           }
         ], [
-          'atbdx2024_slides.pdf',
-          'bordeauxjs2026_slides.pdf',
           'internship_report_2018.pdf',
-          'ptc2025_slides.pdf',
-          'xaviermaso.pdf'
+          'xaviermaso.pdf',
+
+          'slides/atbdx2024.pdf',
+          'slides/bordeauxjs2026.pdf',
+          'slides/ptc2025.pdf'
         ].map((f) => {
           return {
             from: path.join(__dirname, 'front', 'static', 'documents', f),
