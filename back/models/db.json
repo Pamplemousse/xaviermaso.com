@@ -11,7 +11,7 @@
    "dates": "2023 (rebirth) - 2025",
    "tags": "rust, matrix, nix",
    "links": [{
-     "target": "https://git.sr.ht/~pamplemousse/Alfred/"
+     "target": "https://git.xaviermaso.com/Alfred.git"
    }],
    "description": "My very own butler.<br/>Implemented in Rust, reachable over <a target='_blank' href='https://matrix.org'>Matrix</a>, packaged for <a target='_blank' href='https://nixos.org'>Nix and NixOS</a>. Part of the data it collects eventually finds its way to my own <a target='_blank' href='https://grafana.com/'>Grafana</a> instance."
   }, {
@@ -20,7 +20,7 @@
     "dates": "2014 - today",
     "tags": "nodejs, elm, front-end development, devops",
     "links": [{
-      "target": "https://github.com/Pamplemousse/xaviermaso.com"
+      "target": "https://git.xaviermaso.com/xaviermaso.com.git"
     }],
     "description": "The gorgeous website you are looking at right now. With 100% AI-free content.<br/>Front-end written in <a target='_blank' href='https://elm-lang.org/'>Elm</a>, back-end powered by ExpressJS."
   }, {

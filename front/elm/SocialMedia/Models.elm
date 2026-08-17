@@ -18,6 +18,11 @@ initialSocialMedia =
       , altText = "Email image link mailing to contact@xaviermaso.com."
       , label = "Send me an email"
       }
+    , { hrefTarget = "https://git.xaviermaso.com/nodes/git.xaviermaso.com"
+      , imageClass = "fa-git"
+      , altText = "Git image link for Pamplemousse's account."
+      , label = "See some of my code repositorie"
+      }
     , { hrefTarget = "https://matrix.to/#/@pamplemouss_:matrix.org"
       , imageClass = "fa-matrix-org"
       , altText = "Matrix image link for Xavier Maso's matrix profile."
@@ -27,11 +32,6 @@ initialSocialMedia =
       , imageClass = "fa-mastodon"
       , altText = "Mastodon image link for @Pamplemouss_."
       , label = "Follow me on Mastodon"
-      }
-    , { hrefTarget = "https://github.com/Pamplemousse"
-      , imageClass = "fa-github"
-      , altText = "Github image link for Pamplemousse's account."
-      , label = "Follow me on Github"
       }
     , { hrefTarget = "https://www.linkedin.com/in/%F0%9F%8D%8A-xavier-maso-96b04a39/"
       , imageClass = "fa-linkedin"
